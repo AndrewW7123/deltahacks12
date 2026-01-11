@@ -6,8 +6,7 @@ from gpiozero import DistanceSensor
 from smbus2 import SMBus
 from bme280 import BME280
 import subprocess
-import csv
-
+import requests
 
 bus = SMBus(1)
 bme280 = BME280(i2c_dev=bus)
@@ -57,79 +56,53 @@ def record_5_seconds(filename):
     except Exception as e:
         print(f"Error recording: {e}")
 
+def send_sensor_data(hum, temp, time_count, status, audio_path=None):
+    pass
 
 count = 0
 tracker = 0
 distance_storage = []
 stop_counter = 0
 time_total = 1
+max_temp = 0
 
-start_time = time.time()
-
-import csv
-import os
-
-# --- Before the loop ---
-csv_file = "live_shower_data.csv"
-headers = ["timestamp", "temp", "humidity", "distance", "status"]
-
-# Create the file and write headers if it doesn't exist
-
-if not os.path.exists(csv_file):
-    with open(csv_file, 'w', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(headers)
-
-with open(csv_file, 'w', newline='') as f:
-    writer = csv.writer(f)
-    writer.writerow(headers)
-
-while True:
+while stop_counter <= 25:
     dist = ultrasonic.distance * 100
     temperature = bme280.get_temperature() - 2
     hum = bme280.get_humidity()
     
-    # status is "active" while in the loop
+    if temperature > max_temp:
+        max_temp = temperature
+
     status = "running" 
     
-    # 1. Print to console
-    print(f"Temp: {temperature:0.2f}C | Hum: {hum:0.2f}% | Distance: {dist:0.2f} | Elapsed Time: {time_total}")
+    #Printing Hum, Temp, Distance Out
+    print(f"Max temp: {max_temp:0.2f}C | Hum: {hum:0.2f}% | Distance: {dist:0.2f} | Elapsed Time: {time_total}")
 
-    # 2. Append to CSV immediately
-    with open(csv_file, 'a', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow([
-            time.strftime("%Y-%m-%d %H:%M:%S"),
-            time_total, 
-            round(temperature, 2), 
-            round(hum, 2), 
-            round(dist, 2), 
-            status
-        ])
-
-    # --- Your existing logic ---
+    ##Checking if Audio is Recorded 
     count += 1
     if count == 30:
-        count = 0 # Don't forget to reset count!
+        count = 0 
         tracker += 1
         time_total += 5
         record_5_seconds(f"audio{tracker}.wav")
-        
+
+    ##Checking if Distance is recorded  
     if round(dist, 2) == 100.00:
         stop_counter += 1
     else:
         stop_counter = 0
     
-    if stop_counter >= 25:
-        # Update one last time to say it's stopped
-        with open(csv_file, 'a', newline='') as f:
-            csv.writer(f).writerow([time.strftime("%Y-%m-%d %H:%M:%S"), time_total, "-", "-", "STOPPED"])
-        
+    if stop_counter == 25:
         print("No Human detected. Stopping...")
-        break
-        
+        status = "stopped"
+
     time.sleep(1.0)
     time_total += 1
+    
+        
+        
+
     
         
         
