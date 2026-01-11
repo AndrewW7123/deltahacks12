@@ -44,7 +44,7 @@ export default function AuthModal({ onSignIn, onRegister }: AuthModalProps) {
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-slate-800 border border-slate-700 rounded-xl p-8 max-w-md w-full shadow-2xl">
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-white mb-2">Welcome to Proof-of-Shower</h2>
+          <h2 className="text-2xl font-bold text-white mb-2">Welcome to Shower%</h2>
           <p className="text-slate-400">Connect your wallet to get started</p>
         </div>
 

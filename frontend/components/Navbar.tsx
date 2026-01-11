@@ -1,46 +1,43 @@
 "use client";
 
 import Link from "next/link";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import Image from "next/image";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { User, UserCircle } from "lucide-react";
 
 export default function Navbar() {
+  const { connected, publicKey } = useWallet();
+
   return (
-    <nav className="flex items-center justify-between p-6 bg-slate-900 border-b border-slate-700">
-      <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-        <span className="text-2xl">🧼</span>
-        <h1 className="text-xl font-bold text-white tracking-tighter">
-          Proof-of-Shower
-        </h1>
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-md bg-card/90 border-b border-border shadow-sm">
+      <Link href="/" className="flex items-center gap-3 group">
+        <div className="relative w-16 h-16 group-hover:rotate-12 transition-transform">
+          <Image
+            src="/delta.png"
+            alt="Shower% Logo"
+            width={64}
+            height={64}
+            className="object-contain"
+          />
+        </div>
+        <span className="text-3xl font-bold text-gradient-primary group-hover:opacity-80 transition-opacity tracking-tight">
+          Shower%
+        </span>
       </Link>
 
       <div className="flex items-center gap-4">
-        {/* Profile Icon Link */}
+        {/* User Profile Icon - Links to /profile */}
         <Link
           href="/profile"
-          className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
-          aria-label="Profile"
+          className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 border border-border hover:border-primary/50 transition-all hover:scale-105 group"
+          title={connected ? "View Profile" : "Login / Sign Up"}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-white"
-          >
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
+          {connected && publicKey ? (
+            <User className="w-5 h-5 text-primary group-hover:text-primary/80 transition-colors" />
+          ) : (
+            <UserCircle className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+          )}
         </Link>
-
-        {/* Wallet Connect Button */}
-        <div className="hover:scale-105 transition-transform">
-          <WalletMultiButton style={{ backgroundColor: "#2563eb" }} />
-        </div>
       </div>
     </nav>
   );

@@ -1,4 +1,4 @@
-import { Connection, Keypair, LAMPORTS_PER_SOL, clusterApiUrl } from "@solana/web3.js";
+import { Connection, Keypair, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import {
   createMint,
   getOrCreateAssociatedTokenAccount,
@@ -64,51 +64,100 @@ async function main() {
   console.log(`📡 Connected to Solana Devnet: ${DEVNET_RPC_URL}\n`);
 
   try {
-    // Step 1: Generate Treasury Wallet
-    console.log("1️⃣  Generating Treasury Wallet...");
-    const treasuryWallet = Keypair.generate();
-    const treasuryPublicKey = treasuryWallet.publicKey;
-    console.log(`   ✅ Treasury Public Key: ${treasuryPublicKey.toString()}`);
+    // Step 1: Load or Generate Treasury Wallet
+    let treasuryWallet;
+    let treasuryPublicKey;
+    
+    if (fs.existsSync(TREASURY_FILE)) {
+      console.log("1️⃣  Loading existing Treasury Wallet...");
+      const treasuryData = JSON.parse(fs.readFileSync(TREASURY_FILE, "utf8"));
+      const secretKey = bs58.decode(treasuryData.secretKey);
+      treasuryWallet = Keypair.fromSecretKey(secretKey);
+      treasuryPublicKey = treasuryWallet.publicKey;
+      console.log(`   ✅ Loaded Treasury Public Key: ${treasuryPublicKey.toString()}`);
+    } else {
+      console.log("1️⃣  Generating Treasury Wallet...");
+      treasuryWallet = Keypair.generate();
+      treasuryPublicKey = treasuryWallet.publicKey;
+      console.log(`   ✅ Treasury Public Key: ${treasuryPublicKey.toString()}`);
 
-    // Encode secret key to base58 for storage
-    const secretKeyBase58 = bs58.encode(treasuryWallet.secretKey);
-    const treasuryData = {
-      publicKey: treasuryPublicKey.toString(),
-      secretKey: secretKeyBase58,
-      // Also store as array for compatibility
-      secretKeyArray: Array.from(treasuryWallet.secretKey),
-    };
+      // Encode secret key to base58 for storage
+      const secretKeyBase58 = bs58.encode(treasuryWallet.secretKey);
+      const treasuryData = {
+        publicKey: treasuryPublicKey.toString(),
+        secretKey: secretKeyBase58,
+        // Also store as array for compatibility
+        secretKeyArray: Array.from(treasuryWallet.secretKey),
+      };
 
-    // Save to treasury.json
-    fs.writeFileSync(TREASURY_FILE, JSON.stringify(treasuryData, null, 2));
-    console.log(`   💾 Saved treasury wallet to: ${TREASURY_FILE}\n`);
+      // Save to treasury.json
+      fs.writeFileSync(TREASURY_FILE, JSON.stringify(treasuryData, null, 2));
+      console.log(`   💾 Saved treasury wallet to: ${TREASURY_FILE}`);
+    }
 
-    // Step 2: Request Airdrop
-    console.log("2️⃣  Requesting 2 SOL airdrop...");
-    const airdropSignature = await connection.requestAirdrop(
-      treasuryPublicKey,
-      AIRDROP_AMOUNT
-    );
-    console.log(`   ✅ Airdrop signature: ${airdropSignature}`);
+    // Check current balance
+    let balance = await connection.getBalance(treasuryPublicKey);
+    let solBalance = balance / LAMPORTS_PER_SOL;
+    console.log(`   💰 Current balance: ${solBalance} SOL\n`);
 
-    // Wait for airdrop confirmation
-    await waitForAirdropConfirmation(connection, airdropSignature);
+    // Step 2: Request Airdrop (only if balance is insufficient)
+    const MIN_BALANCE_REQUIRED = 1.5; // Need at least 1.5 SOL for transactions
+    
+    if (solBalance < MIN_BALANCE_REQUIRED) {
+      console.log("2️⃣  Balance insufficient. Requesting 2 SOL airdrop...");
+      let airdropSignature;
+      let airdropRetries = 0;
+      const maxAirdropRetries = 5;
+      
+      while (airdropRetries < maxAirdropRetries) {
+        try {
+          airdropSignature = await connection.requestAirdrop(
+            treasuryPublicKey,
+            AIRDROP_AMOUNT
+          );
+          console.log(`   ✅ Airdrop signature: ${airdropSignature}`);
+          break; // Success, exit retry loop
+        } catch (error) {
+          airdropRetries++;
+          if (error.message.includes("429") || error.message.includes("Too Many Requests") || error.message.includes("Internal error")) {
+            if (airdropRetries < maxAirdropRetries) {
+              const delaySeconds = airdropRetries * 3; // Exponential backoff: 3s, 6s, 9s, 12s, 15s
+              console.log(`   ⚠️  Rate limited. Waiting ${delaySeconds} seconds before retry (${airdropRetries}/${maxAirdropRetries})...`);
+              await wait(delaySeconds * 1000);
+            } else {
+              console.log(`\n   ❌ Airdrop failed after ${maxAirdropRetries} retries due to rate limiting.`);
+              console.log(`   💡 You can manually fund the wallet with dev SOL and run this script again.`);
+              console.log(`   📍 Wallet Address: ${treasuryPublicKey.toString()}`);
+              console.log(`   💧 Use a Solana faucet: https://faucet.solana.com/`);
+              throw new Error(`Airdrop failed. Please fund wallet manually or try again in a few minutes.`);
+            }
+          } else {
+            throw error; // Re-throw if it's not a rate limit error
+          }
+        }
+      }
 
-    // Verify balance
-    const balance = await connection.getBalance(treasuryPublicKey);
-    const solBalance = balance / LAMPORTS_PER_SOL;
-    console.log(`   💰 Treasury balance: ${solBalance} SOL\n`);
+      // Wait for airdrop confirmation
+      await waitForAirdropConfirmation(connection, airdropSignature);
 
-    if (solBalance < 1) {
-      throw new Error("Insufficient balance after airdrop");
+      // Verify balance after airdrop
+      balance = await connection.getBalance(treasuryPublicKey);
+      solBalance = balance / LAMPORTS_PER_SOL;
+      console.log(`   💰 New balance: ${solBalance} SOL\n`);
+
+      if (solBalance < MIN_BALANCE_REQUIRED) {
+        throw new Error(`Insufficient balance after airdrop. Current: ${solBalance} SOL, Required: ${MIN_BALANCE_REQUIRED} SOL`);
+      }
+    } else {
+      console.log("2️⃣  ✅ Balance sufficient, skipping airdrop\n");
     }
 
     // Step 3: Create Token Mints
     console.log("3️⃣  Creating Token Mints...\n");
 
-    // Create vH2O Token Mint
-    console.log("   Creating vH2O token mint...");
-    const vH2OMint = await createMint(
+    // Create SoapToken Token Mint
+    console.log("   Creating SoapToken token mint...");
+    const soapTokenMint = await createMint(
       connection,
       treasuryWallet, // Payer
       treasuryPublicKey, // Mint authority
@@ -118,7 +167,7 @@ async function main() {
       undefined, // Confirmation options
       TOKEN_PROGRAM_ID
     );
-    console.log(`   ✅ vH2O Mint Address: ${vH2OMint.toString()}`);
+    console.log(`   ✅ SoapToken Mint Address: ${soapTokenMint.toString()}`);
 
     // Create ICE Token Mint
     console.log("   Creating ICE token mint...");
@@ -132,52 +181,96 @@ async function main() {
       undefined, // Confirmation options
       TOKEN_PROGRAM_ID
     );
-    console.log(`   ✅ ICE Mint Address: ${ICEMint.toString()}\n`);
+    console.log(`   ✅ ICE Mint Address: ${ICEMint.toString()}`);
+
+    // Create CleanEnv Token Mint
+    console.log("   Creating CleanEnv token mint...");
+    const cleanEnvMint = await createMint(
+      connection,
+      treasuryWallet, // Payer
+      treasuryPublicKey, // Mint authority
+      null, // Freeze authority (null = no freeze)
+      0, // Decimals (0 = whole tokens)
+      undefined, // Keypair (auto-generate)
+      undefined, // Confirmation options
+      TOKEN_PROGRAM_ID
+    );
+    console.log(`   ✅ CleanEnv Mint Address: ${cleanEnvMint.toString()}\n`);
 
     // Step 4: Mint Tokens to Treasury
     console.log("4️⃣  Minting tokens to Treasury...\n");
 
-    // Mint vH2O tokens
-    console.log(`   Minting ${TOKEN_AMOUNT.toLocaleString()} vH2O tokens...`);
-    const vH2OTokenAccount = await getOrCreateAssociatedTokenAccount(
-      connection,
-      treasuryWallet,
-      vH2OMint,
-      treasuryPublicKey
-    );
+    // Small delay to ensure mints are fully propagated
+    await wait(1000);
 
-    const vH2OMintSignature = await mintTo(
+    // Mint SoapToken tokens
+    console.log(`   Minting ${TOKEN_AMOUNT.toLocaleString()} SoapToken tokens...`);
+    let soapTokenAccount;
+    try {
+      soapTokenAccount = await getOrCreateAssociatedTokenAccount(
+        connection,
+        treasuryWallet,
+        soapTokenMint,
+        treasuryPublicKey
+      );
+    } catch (error) {
+      console.error(`   ⚠️  Error creating SoapToken account: ${error.message}`);
+      console.log(`   Retrying after delay...`);
+      // Retry once after a short delay
+      await wait(2000);
+      soapTokenAccount = await getOrCreateAssociatedTokenAccount(
+        connection,
+        treasuryWallet,
+        soapTokenMint,
+        treasuryPublicKey
+      );
+    }
+
+    const soapTokenMintSignature = await mintTo(
       connection,
       treasuryWallet, // Payer
-      vH2OMint, // Mint
-      vH2OTokenAccount.address, // Destination
-      treasuryPublicKey, // Authority
+      soapTokenMint, // Mint
+      soapTokenAccount.address, // Destination
+      treasuryWallet, // Authority (mint authority keypair)
       TOKEN_AMOUNT, // Amount
       [], // Multi-signers (none)
       undefined, // Confirmation options
       TOKEN_PROGRAM_ID
     );
-    console.log(`   ✅ vH2O mint transaction: ${vH2OMintSignature}`);
-    
-    // Verify vH2O balance
-    const vH2OBalance = await connection.getTokenAccountBalance(vH2OTokenAccount.address);
-    console.log(`   💧 vH2O Treasury balance: ${vH2OBalance.value.uiAmount?.toLocaleString()} tokens\n`);
+    console.log(`   ✅ SoapToken mint transaction: ${soapTokenMintSignature}`);
+
+    // Verify SoapToken balance
+    const soapTokenBalance = await connection.getTokenAccountBalance(soapTokenAccount.address);
+    console.log(`   🧼 SoapToken Treasury balance: ${soapTokenBalance.value.uiAmount?.toLocaleString()} tokens\n`);
 
     // Mint ICE tokens
     console.log(`   Minting ${TOKEN_AMOUNT.toLocaleString()} ICE tokens...`);
-    const ICETokenAccount = await getOrCreateAssociatedTokenAccount(
-      connection,
-      treasuryWallet,
-      ICEMint,
-      treasuryPublicKey
-    );
+    let ICETokenAccount;
+    try {
+      ICETokenAccount = await getOrCreateAssociatedTokenAccount(
+        connection,
+        treasuryWallet,
+        ICEMint,
+        treasuryPublicKey
+      );
+    } catch (error) {
+      console.error(`   ⚠️  Error creating ICE account: ${error.message}`);
+      console.log(`   Retrying after delay...`);
+      await wait(2000);
+      ICETokenAccount = await getOrCreateAssociatedTokenAccount(
+        connection,
+        treasuryWallet,
+        ICEMint,
+        treasuryPublicKey
+      );
+    }
 
     const ICEMintSignature = await mintTo(
       connection,
       treasuryWallet, // Payer
       ICEMint, // Mint
       ICETokenAccount.address, // Destination
-      treasuryPublicKey, // Authority
+      treasuryWallet, // Authority (mint authority keypair)
       TOKEN_AMOUNT, // Amount
       [], // Multi-signers (none)
       undefined, // Confirmation options
@@ -189,6 +282,45 @@ async function main() {
     const ICEBalance = await connection.getTokenAccountBalance(ICETokenAccount.address);
     console.log(`   ❄️  ICE Treasury balance: ${ICEBalance.value.uiAmount?.toLocaleString()} tokens\n`);
 
+    // Mint CleanEnv tokens
+    console.log(`   Minting ${TOKEN_AMOUNT.toLocaleString()} CleanEnv tokens...`);
+    let cleanEnvTokenAccount;
+    try {
+      cleanEnvTokenAccount = await getOrCreateAssociatedTokenAccount(
+        connection,
+        treasuryWallet,
+        cleanEnvMint,
+        treasuryPublicKey
+      );
+    } catch (error) {
+      console.error(`   ⚠️  Error creating CleanEnv account: ${error.message}`);
+      console.log(`   Retrying after delay...`);
+      await wait(2000);
+      cleanEnvTokenAccount = await getOrCreateAssociatedTokenAccount(
+        connection,
+        treasuryWallet,
+        cleanEnvMint,
+        treasuryPublicKey
+      );
+    }
+
+    const cleanEnvMintSignature = await mintTo(
+      connection,
+      treasuryWallet, // Payer
+      cleanEnvMint, // Mint
+      cleanEnvTokenAccount.address, // Destination
+      treasuryWallet, // Authority (mint authority keypair)
+      TOKEN_AMOUNT, // Amount
+      [], // Multi-signers (none)
+      undefined, // Confirmation options
+      TOKEN_PROGRAM_ID
+    );
+    console.log(`   ✅ CleanEnv mint transaction: ${cleanEnvMintSignature}`);
+
+    // Verify CleanEnv balance
+    const cleanEnvBalance = await connection.getTokenAccountBalance(cleanEnvTokenAccount.address);
+    console.log(`   🌿 CleanEnv Treasury balance: ${cleanEnvBalance.value.uiAmount?.toLocaleString()} tokens\n`);
+
     // Final Summary
     console.log("=".repeat(60));
     console.log("🎉 Treasury Setup Complete!\n");
@@ -197,8 +329,9 @@ async function main() {
     console.log(`   Treasury Balance: ${solBalance} SOL`);
     console.log(`   Treasury File: ${TREASURY_FILE}\n`);
     console.log("🪙 Token Mint Addresses (Copy these!):");
-    console.log(`   vH2O Mint Address: ${vH2OMint.toString()}`);
-    console.log(`   ICE Mint Address: ${ICEMint.toString()}\n`);
+    console.log(`   SoapToken Mint Address: ${soapTokenMint.toString()}`);
+    console.log(`   ICE Mint Address: ${ICEMint.toString()}`);
+    console.log(`   CleanEnv Mint Address: ${cleanEnvMint.toString()}\n`);
     console.log("=".repeat(60));
   } catch (error) {
     console.error("\n❌ Error during initialization:");
