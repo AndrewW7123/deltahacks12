@@ -12,8 +12,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Shower%",
-  description: "TO BE WRITTEN",
+  title: "Ranked Showers",
+  description: "Compete to be the cleanest in the world! Track your performance and find your optimal showers.",
 };
 
 export default function RootLayout({
@@ -22,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={outfit.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={outfit.className} suppressHydrationWarning>
         {/* Wrap the children (your pages) with the Wallet Provider */}
         <AppWalletProvider>
           {/* Monitor wallet connection and redirect to calibration if user doesn't exist */}

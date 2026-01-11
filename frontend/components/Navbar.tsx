@@ -14,14 +14,14 @@ export default function Navbar() {
         <div className="relative w-16 h-16 group-hover:rotate-12 transition-transform">
           <Image
             src="/delta.png"
-            alt="Shower% Logo"
+            alt="Ranked Showers Logo"
             width={64}
             height={64}
             className="object-contain"
           />
         </div>
         <span className="text-3xl font-bold text-gradient-primary group-hover:opacity-80 transition-opacity tracking-tight">
-          Shower%
+          Ranked Showers
         </span>
       </Link>
 

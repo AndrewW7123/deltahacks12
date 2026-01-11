@@ -64,8 +64,8 @@ export default function LeaderboardRow({
           {username}
         </p>
         {wallet && (
-          <p className="text-xs text-muted-foreground mt-0.5">
-            {wallet.slice(0, 4)}...{wallet.slice(-4)}
+          <p className="text-xs text-muted-foreground mt-0.5 font-mono">
+            {wallet.slice(0, 6)}...{wallet.slice(-4)}
           </p>
         )}
       </div>

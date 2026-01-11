@@ -96,6 +96,11 @@ export default function Podium({
             </div>
 
             <p className="font-semibold text-foreground mb-1">{user.name}</p>
+            {user.wallet && (
+              <p className="text-xs text-muted-foreground mb-1 font-mono">
+                {user.wallet.slice(0, 6)}...{user.wallet.slice(-4)}
+              </p>
+            )}
             {user.score !== undefined && (
               <p className="text-primary font-bold text-lg tabular-nums">{user.score.toLocaleString()} pts</p>
             )}

@@ -1,5 +1,11 @@
 {
   "app": {
+    "[project]/frontend/app/calibration/page": [
+      "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2"
+    ],
+    "[project]/frontend/app/page": [
+      "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2"
+    ],
     "[project]/frontend/app/profile/page": [
       "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2"
     ]

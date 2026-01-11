@@ -134,7 +134,7 @@ export default function ProfilePage() {
           <div className="flex flex-col items-center justify-center min-h-[60vh] max-w-md mx-auto">
             <div className="w-full bg-card/90 backdrop-blur-sm border border-border rounded-xl p-8 shadow-lg">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-foreground mb-3">Welcome to Shower%</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-3">Welcome to Ranked Showers</h2>
                 <p className="text-muted-foreground">Connect your Solana wallet to get started</p>
               </div>
 

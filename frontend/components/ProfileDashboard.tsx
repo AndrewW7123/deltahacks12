@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Info, Pencil, X, Check, Upload, Image as ImageIcon, Play } from "lucide-react";
+import { Info, Pencil, X, Check, Upload, Image as ImageIcon, Play, Droplets, Leaf } from "lucide-react";
+import StatCard from "./StatCard";
 
 interface ProfileDashboardProps {
   user: {
@@ -20,6 +21,7 @@ interface ProfileDashboardProps {
     idealTemp?: number;
     totalPoints?: number;
     totalShowers?: number;
+    totalCleanEnvCoins?: number;
   };
   onUpdate?: (updatedUser: any) => void;
 }
@@ -442,25 +444,13 @@ export default function ProfileDashboard({ user, onUpdate }: ProfileDashboardPro
                   </button>
                 </>
               ) : (
-                <>
-                  <button
-                    onClick={() => {
-                      // TODO: Call hardware events to start shower
-                      console.log("Start shower clicked");
-                    }}
-                    className="flex items-center gap-2 px-6 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors font-semibold"
-                  >
-                    <Play className="w-4 h-4" />
-                    Start Shower
-                  </button>
-                  <button
-                    onClick={handleEditToggle}
-                    className="flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-secondary/80 text-foreground border border-border rounded-lg transition-colors"
-                  >
-                    <Pencil className="w-4 h-4" />
-                    Edit Profile
-                  </button>
-                </>
+                <button
+                  onClick={handleEditToggle}
+                  className="flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-secondary/80 text-foreground border border-border rounded-lg transition-colors"
+                >
+                  <Pencil className="w-4 h-4" />
+                  Edit Profile
+                </button>
               )}
             </div>
           </div>
@@ -469,6 +459,22 @@ export default function ProfileDashboard({ user, onUpdate }: ProfileDashboardPro
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 py-12">
+        {/* Stats Cards - Showers and Environmental Coins */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <StatCard
+            icon={Droplets}
+            label="Total Showers"
+            value={user.totalShowers || 0}
+            unit="showers"
+          />
+          <StatCard
+            icon={Leaf}
+            label="Environmental Coins"
+            value={user.totalCleanEnvCoins || 0}
+            unit="coins"
+          />
+        </div>
+
         {/* Profile Details Card */}
         {isEditing && (
           <div className="rounded-2xl bg-card/90 backdrop-blur-sm border border-border shadow-sm p-8 mb-6">
