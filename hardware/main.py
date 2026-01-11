@@ -57,7 +57,52 @@ def record_5_seconds(filename):
         print(f"Error recording: {e}")
 
 def send_sensor_data(hum, temp, time_count, status, audio_path=None):
-    pass
+    """
+    Send sensor data to backend API when shower ends
+    Updates Ryan Chang's shower count and coins
+    """
+    # Ryan Chang's wallet address
+    RYAN_WALLET = "4nkeeh7vK9J8mN3pQ2rT5wXyZ1aB6cD4eF8gH0iJ2kL9mN1oP3qR5sT7uV9wXfbz6"
+    
+    # Backend API URL - update this to match your backend server
+    API_URL = "http://localhost:3001/api/shower/hardware-input"
+    
+    if status == "stopped" and time_count > 0:
+        try:
+            # Prepare data for backend
+            payload = {
+                "walletAddress": RYAN_WALLET,
+                "actualTime": time_count,  # Total time in seconds
+                "actualTemp": temp  # Temperature in Celsius
+            }
+            
+            print(f"\n📤 Sending shower data to backend...")
+            print(f"   Time: {time_count}s ({time_count/60:.1f} min)")
+            print(f"   Temperature: {temp:.1f}°C")
+            
+            response = requests.post(API_URL, json=payload, timeout=30)
+            
+            if response.status_code == 200:
+                data = response.json()
+                if data.get("success"):
+                    print(f"✅ Shower data sent successfully!")
+                    print(f"   Points: {data['data']['points']}")
+                    print(f"   CleanEnv Coins: {data['data']['cleanEnvCoins']}")
+                    print(f"   SoapToken Coins: {data['data']['soapTokenCoins']}")
+                    if data['data']['blockchainSync']['status'] == 'synced':
+                        print(f"   ✅ Tokens minted to blockchain")
+                    else:
+                        print(f"   ⚠️  Blockchain sync: {data['data']['blockchainSync']['status']}")
+                else:
+                    print(f"❌ Backend returned error: {data.get('error', 'Unknown error')}")
+            else:
+                print(f"❌ Backend request failed: {response.status_code}")
+                print(f"   {response.text}")
+        except requests.exceptions.RequestException as e:
+            print(f"❌ Failed to connect to backend: {e}")
+            print(f"   Make sure backend server is running at {API_URL}")
+        except Exception as e:
+            print(f"❌ Error sending data: {e}")
 
 count = 0
 tracker = 0
@@ -96,6 +141,8 @@ while stop_counter <= 25:
     if stop_counter == 25:
         print("No Human detected. Stopping...")
         status = "stopped"
+        # Send final shower data to backend
+        send_sensor_data(hum, max_temp, time_total, status)
 
     time.sleep(1.0)
     time_total += 1

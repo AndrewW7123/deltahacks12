@@ -12,9 +12,9 @@ import {
   sendAndConfirmTransaction,
 } from "@solana/web3.js";
 import bs58 from "bs58";
+import { loadTreasuryWallet } from "./loadTreasuryWallet.js";
 
 // Environment variables
-const SOLANA_PRIVATE_KEY = process.env.SOLANA_PRIVATE_KEY;
 const SOLANA_RPC_URL = process.env.SOLANA_RPC_URL || "https://api.devnet.solana.com";
 
 // Memo Program ID for storing data on blockchain
@@ -31,15 +31,9 @@ const MEMO_PROGRAM_ID = new PublicKey("MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfc
  */
 export async function recordRegistrationOnBlockchain(userData) {
   try {
-    // Validate environment variables
-    if (!SOLANA_PRIVATE_KEY) {
-      throw new Error("SOLANA_PRIVATE_KEY environment variable is not set");
-    }
-
-    // Setup connection and admin wallet
+    // Setup connection and treasury wallet (loads from treasury.json or SOLANA_PRIVATE_KEY)
     const connection = new Connection(SOLANA_RPC_URL, "confirmed");
-    const adminSecretKey = bs58.decode(SOLANA_PRIVATE_KEY);
-    const adminWallet = Keypair.fromSecretKey(adminSecretKey);
+    const adminWallet = loadTreasuryWallet();
 
     // Validate user wallet address
     if (!userData.walletAddress) {

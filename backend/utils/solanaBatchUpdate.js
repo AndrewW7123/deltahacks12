@@ -18,9 +18,9 @@ import {
 } from "@solana/spl-token";
 import bs58 from "bs58";
 import User from "../models/User.js";
+import { loadTreasuryWallet } from "./loadTreasuryWallet.js";
 
 // Environment variables
-const SOLANA_PRIVATE_KEY = process.env.SOLANA_PRIVATE_KEY;
 const SOAP_TOKEN_MINT_ADDRESS = process.env.SOAP_TOKEN_MINT_ADDRESS;
 const CLEAN_ENV_MINT_ADDRESS = process.env.CLEAN_ENV_MINT_ADDRESS;
 const SOLANA_RPC_URL = process.env.SOLANA_RPC_URL || "https://api.devnet.solana.com";
@@ -87,9 +87,6 @@ async function mintTokens(connection, adminWallet, mintAddress, userPublicKey, a
 export async function processNightlyBatchUpdate() {
   try {
     // Validate environment variables
-    if (!SOLANA_PRIVATE_KEY) {
-      throw new Error("SOLANA_PRIVATE_KEY environment variable is not set");
-    }
     if (!SOAP_TOKEN_MINT_ADDRESS) {
       throw new Error("SOAP_TOKEN_MINT_ADDRESS environment variable is not set");
     }
@@ -97,10 +94,9 @@ export async function processNightlyBatchUpdate() {
       throw new Error("CLEAN_ENV_MINT_ADDRESS environment variable is not set");
     }
 
-    // Setup connection and admin wallet
+    // Setup connection and treasury wallet (loads from treasury.json or SOLANA_PRIVATE_KEY)
     const connection = new Connection(SOLANA_RPC_URL, "confirmed");
-    const adminSecretKey = bs58.decode(SOLANA_PRIVATE_KEY);
-    const adminWallet = Keypair.fromSecretKey(adminSecretKey);
+    const adminWallet = loadTreasuryWallet();
 
     const soapTokenMint = new PublicKey(SOAP_TOKEN_MINT_ADDRESS);
     const cleanEnvMint = new PublicKey(CLEAN_ENV_MINT_ADDRESS);

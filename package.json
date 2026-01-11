@@ -6,7 +6,8 @@
     "server": "node backend/server.js",
     "init-solana": "node backend/scripts/initSolana.js",
     "nightly-sync": "node backend/scripts/nightlySync.js",
-    "sync-registrations": "node backend/scripts/syncRegistrationsToBlockchain.js"
+    "sync-registrations": "node backend/scripts/syncRegistrationsToBlockchain.js",
+    "test-hardware": "node backend/scripts/testHardwareConnection.js"
   },
   "dependencies": {
     "@google/genai": "^1.35.0",

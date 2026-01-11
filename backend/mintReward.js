@@ -12,9 +12,9 @@ import {
   TOKEN_PROGRAM_ID,
 } from "@solana/spl-token";
 import bs58 from "bs58";
+import { loadTreasuryWallet } from "./utils/loadTreasuryWallet.js";
 
 // Load environment variables
-const SOLANA_PRIVATE_KEY = process.env.SOLANA_PRIVATE_KEY;
 const SOLANA_MINT_ADDRESS = process.env.SOLANA_MINT_ADDRESS;
 const SOLANA_RPC_URL = process.env.SOLANA_RPC_URL || "https://api.devnet.solana.com";
 
@@ -31,16 +31,12 @@ const MEMO_PROGRAM_ID = new PublicKey("MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfc
 export async function mintWithQuest(userWalletAddress, baseAmount, questsCompleted = []) {
   try {
     // Validate environment variables
-    if (!SOLANA_PRIVATE_KEY) {
-      throw new Error("SOLANA_PRIVATE_KEY environment variable is not set");
-    }
     if (!SOLANA_MINT_ADDRESS) {
       throw new Error("SOLANA_MINT_ADDRESS environment variable is not set");
     }
 
-    // Decode the admin wallet private key
-    const adminSecretKey = bs58.decode(SOLANA_PRIVATE_KEY);
-    const adminWallet = Keypair.fromSecretKey(adminSecretKey);
+    // Load treasury wallet (from treasury.json or SOLANA_PRIVATE_KEY)
+    const adminWallet = loadTreasuryWallet();
 
     // Create connection
     const connection = new Connection(SOLANA_RPC_URL, "confirmed");

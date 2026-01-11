@@ -11,7 +11,7 @@ export default function Podium({
 }: {
   users: PodiumUser[]
 }) {
-  const order = [2, 1, 3] // visual order: 2nd, 1st, 3rd
+  const order: (1 | 2 | 3)[] = [2, 1, 3] // visual order: 2nd, 1st, 3rd
 
   // If no users, show empty state
   if (users.length === 0) {

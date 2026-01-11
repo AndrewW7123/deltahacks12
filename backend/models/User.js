@@ -110,6 +110,30 @@ const userSchema = new mongoose.Schema(
               type: Date,
               default: Date.now,
             },
+            // Blockchain sync tracking
+            blockchainSync: {
+              status: {
+                type: String,
+                enum: ["pending", "synced", "failed", "manual_sync_required"],
+                default: "pending",
+              },
+              soapTokenTx: {
+                type: String,
+                default: null,
+              },
+              cleanEnvTx: {
+                type: String,
+                default: null,
+              },
+              syncedAt: {
+                type: Date,
+                default: null,
+              },
+              error: {
+                type: String,
+                default: null,
+              },
+            },
           },
         ],
       },
