@@ -5,6 +5,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
 import profileRoutes from "./routes/profileRoutes.js";
+import leaderboardRoutes from "./routes/leaderboardRoutes.js";
+import showerRoutes from "./routes/showerRoutes.js";
 
 // ES module way to get __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -73,9 +75,12 @@ if (!MONGO_URI) {
       console.log(`   Database: ${MONGO_URI.split("@").pop() || MONGO_URI.split("/").pop()}`);
     })
     .catch((error) => {
-      console.error("❌ MongoDB connection error:", error.message);
-      console.error("   Server will continue running, but database operations will fail.");
-      console.error("   Make sure MongoDB is running and the connection string is correct.");
+      console.warn("⚠️  MongoDB connection failed (server will continue running):", error.message);
+      if (error.message.includes("whitelist") || error.message.includes("Atlas")) {
+        console.warn("   💡 Tip: If using MongoDB Atlas, whitelist your IP at: https://www.mongodb.com/docs/atlas/security-whitelist/");
+        console.warn("   💡 Tip: For local development, use: MONGO_URI=mongodb://localhost:27017/shower-app");
+      }
+      console.warn("   📝 Note: Leaderboard will work (reads from Solana), but user profiles won't be available.");
     });
 
   // MongoDB connection event handlers
@@ -90,6 +95,8 @@ if (!MONGO_URI) {
 
 // Routes
 app.use("/api/profile", profileRoutes);
+app.use("/api/leaderboard", leaderboardRoutes);
+app.use("/api/shower", showerRoutes);
 
 // Health check endpoint
 app.get("/health", (req, res) => {
@@ -124,5 +131,6 @@ app.listen(PORT, () => {
   console.log(`🚀 Server is running on port ${PORT}`);
   console.log(`📍 Health check: http://localhost:${PORT}/health`);
   console.log(`📍 Profile API: http://localhost:${PORT}/api/profile`);
+  console.log(`📍 Leaderboard API: http://localhost:${PORT}/api/leaderboard`);
 });
 

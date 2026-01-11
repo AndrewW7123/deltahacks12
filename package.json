@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "node backend/server.js",
     "start": "node backend/server.js",
-    "server": "node backend/server.js"
+    "server": "node backend/server.js",
+    "init-solana": "node backend/scripts/initSolana.js",
+    "nightly-sync": "node backend/scripts/nightlySync.js"
   },
   "dependencies": {
     "@google/genai": "^1.35.0",

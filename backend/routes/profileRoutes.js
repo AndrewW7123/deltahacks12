@@ -60,19 +60,22 @@ router.post("/calculate", async (req, res) => {
  * 
  * Accepts JSON body with:
  * - walletAddress (required)
- * - displayName, heightFeet, heightInches, weightLbs, hairLength, hairType (questionnaire fields)
+ * - displayName, profilePhoto (profile fields)
+ * - heightFeet, heightInches, weightLbs, hairLength, hairType (questionnaire fields)
  * 
  * Automatically calculates and saves:
  * - idealTimeRange: { min, max } in seconds
  * - idealTemp: temperature in Celsius
  * 
  * NOTE: This endpoint saves to MongoDB. Use /calculate for preview without saving.
+ * NOTE: profilePhoto should be a URL string pointing to the image (e.g., from an image hosting service)
  */
 router.post("/setup", async (req, res) => {
   try {
     const {
       walletAddress,
       displayName,
+      profilePhoto,
       heightFeet,
       heightInches,
       weightLbs,
@@ -108,8 +111,11 @@ router.post("/setup", async (req, res) => {
       walletAddress: normalizedWalletAddress,
     };
 
-    // Add questionnaire fields (user inputs)
+    // Add profile fields (user inputs)
     if (displayName !== undefined) updateData.displayName = displayName;
+    if (profilePhoto !== undefined) updateData.profilePhoto = profilePhoto; // URL to profile photo
+    
+    // Add questionnaire fields (user inputs)
     if (heightFeet !== undefined) updateData.heightFeet = Number(heightFeet);
     if (heightInches !== undefined) updateData.heightInches = Number(heightInches);
     if (weightLbs !== undefined) updateData.weightLbs = Number(weightLbs);
@@ -210,4 +216,3 @@ router.get("/:walletAddress", async (req, res) => {
 });
 
 export default router;
-

@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import "@solana/wallet-adapter-react-ui/styles.css";
-import AppWalletProvider from "@/components/AppWalletProvider"; // 1. Import your new component
+import AppWalletProvider from "@/components/AppWalletProvider";
+import WalletConnectionGuard from "@/components/WalletConnectionGuard";
 
-const inter = Inter({ subsets: ["latin"] });
+const outfit = Outfit({ 
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-outfit",
+});
 
 export const metadata: Metadata = {
-  title: "TO BE NAMED",
+  title: "Shower%",
   description: "TO BE WRITTEN",
 };
 
@@ -18,10 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {/* 2. Wrap the children (your pages) with the Wallet Provider */}
+      <body className={outfit.className}>
+        {/* Wrap the children (your pages) with the Wallet Provider */}
         <AppWalletProvider>
-          {children}
+          {/* Monitor wallet connection and redirect to calibration if user doesn't exist */}
+          <WalletConnectionGuard>
+            {children}
+          </WalletConnectionGuard>
         </AppWalletProvider>
       </body>
     </html>

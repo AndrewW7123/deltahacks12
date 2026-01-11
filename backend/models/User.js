@@ -17,6 +17,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    profilePhoto: {
+      type: String, // URL to profile photo/avatar
+      trim: true,
+    },
     heightFeet: {
       type: Number,
       min: 0,
@@ -55,6 +59,78 @@ const userSchema = new mongoose.Schema(
     idealTemp: {
       type: Number,
       min: 0,
+    },
+
+    // Daily Score Tracking
+    dailyScores: [
+      {
+        date: {
+          type: Date,
+          required: true,
+        },
+        totalPoints: {
+          type: Number,
+          default: 0,
+        },
+        showerCount: {
+          type: Number,
+          default: 0,
+        },
+        cleanEnvCoins: {
+          type: Number,
+          default: 0,
+        },
+        soapTokenCoins: {
+          type: Number,
+          default: 0,
+        },
+        showers: [
+          {
+            time: {
+              type: Number, // Duration in seconds
+              required: true,
+            },
+            temperature: {
+              type: Number, // Temperature in Celsius
+              required: true,
+            },
+            points: {
+              type: Number,
+              required: true,
+            },
+            cleanEnvCoins: {
+              type: Number,
+              default: 0,
+            },
+            soapTokenCoins: {
+              type: Number,
+              default: 0,
+            },
+            timestamp: {
+              type: Date,
+              default: Date.now,
+            },
+          },
+        ],
+      },
+    ],
+
+    // Total Lifetime Stats
+    totalPoints: {
+      type: Number,
+      default: 0,
+    },
+    totalShowers: {
+      type: Number,
+      default: 0,
+    },
+    totalCleanEnvCoins: {
+      type: Number,
+      default: 0,
+    },
+    totalSoapTokenCoins: {
+      type: Number,
+      default: 0,
     },
   },
   {
