@@ -1,14 +1,14 @@
-[00:00:01.436] Server  LOG     ✓ Ready in 1105ms
-[00:00:39.659] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:46.047] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
-[00:00:50.860] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:50.860] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
-[00:00:50.860] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
-[00:00:50.860] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
-[00:00:50.860] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
-[00:00:50.860] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
-[00:00:50.860] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
-[00:00:50.860] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"6963b8e44b7d5e95a20c4ceb","blockchainRegistration":{"synced":false,"syncedAt":null,"txSignature":null},"createdAt":"2026-01-11T14:51:16.211Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"LONG","hairType":"CURLY","heightFeet":5,"heightInches":2,"idealTemp":38,"idealTimeRange":{"max":720,"min":480},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T14:51:16.211Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":190}}
-[00:00:50.860] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"6963b8e44b7d5e95a20c4ceb","blockchainRegistration":{"synced":false,"syncedAt":null,"txSignature":null},"createdAt":"2026-01-11T14:51:16.211Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"LONG","hairType":"CURLY","heightFeet":5,"heightInches":2,"idealTemp":38,"idealTimeRange":{"max":720,"min":480},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T14:51:16.211Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":190}}
-[00:00:59.457] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
-[00:00:59.457] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:00:01.148] Server  LOG     ✓ Ready in 838ms
+[00:00:11.591] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:17.857] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:00:23.796] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:23.796] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:00:23.796] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:00:23.796] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:00:23.796] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:00:23.796] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:00:23.797] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:00:23.797] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"6963b8e44b7d5e95a20c4ceb","blockchainRegistration":{"synced":false,"syncedAt":null,"txSignature":null},"createdAt":"2026-01-11T14:51:16.211Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"LONG","hairType":"CURLY","heightFeet":5,"heightInches":2,"idealTemp":38,"idealTimeRange":{"max":720,"min":480},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T14:51:16.211Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":190}}
+[00:00:23.797] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"6963b8e44b7d5e95a20c4ceb","blockchainRegistration":{"synced":false,"syncedAt":null,"txSignature":null},"createdAt":"2026-01-11T14:51:16.211Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"LONG","hairType":"CURLY","heightFeet":5,"heightInches":2,"idealTemp":38,"idealTimeRange":{"max":720,"min":480},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T14:51:16.211Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":190}}
+[00:00:30.891] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:00:30.891] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6

@@ -25,6 +25,15 @@ subprocess.run(["sudo", "hcitool", "cmd", "0x3F", "0x01C", "0x01", "0x02", "0x00
 
 print("Mic Setup")
 
+# Test backend connection at startup
+backend_connected = test_backend_connection()
+if not backend_connected:
+    print("\n⚠️  WARNING: Backend connection test failed!")
+    print("   Shower data will not be saved until connection is established.")
+    print("   Make sure backend is running: npm run dev\n")
+else:
+    print("   Ready to record showers!\n")
+
 
 def record_5_seconds(filename):
     # 1. Define the folder name
@@ -56,6 +65,40 @@ def record_5_seconds(filename):
     except Exception as e:
         print(f"Error recording: {e}")
 
+def test_backend_connection():
+    """
+    Test connection to backend at startup
+    """
+    RYAN_WALLET = "4nkeeh7vK9J8mN3pQ2rT5wXyZ1aB6cD4eF8gH0iJ2kL9mN1oP3qR5sT7uV9wXfbz6"
+    API_URL = "http://localhost:3001/api/shower/hardware-input"
+    
+    print("\n🔌 Testing backend connection...")
+    try:
+        # Test with minimal data
+        test_payload = {
+            "walletAddress": RYAN_WALLET,
+            "actualTime": 1,
+            "actualTemp": 20
+        }
+        response = requests.post(API_URL, json=test_payload, timeout=5)
+        if response.status_code == 200:
+            print("✅ Backend connection successful!")
+            return True
+        else:
+            print(f"⚠️  Backend responded with status {response.status_code}")
+            print(f"   Response: {response.text[:200]}")
+            return False
+    except requests.exceptions.ConnectionError:
+        print(f"❌ Cannot connect to backend at {API_URL}")
+        print("   Make sure backend server is running: npm run dev")
+        return False
+    except requests.exceptions.Timeout:
+        print(f"❌ Backend connection timeout")
+        return False
+    except Exception as e:
+        print(f"❌ Connection test error: {e}")
+        return False
+
 def send_sensor_data(hum, temp, time_count, status, audio_path=None):
     """
     Send sensor data to backend API when shower ends
@@ -68,41 +111,98 @@ def send_sensor_data(hum, temp, time_count, status, audio_path=None):
     API_URL = "http://localhost:3001/api/shower/hardware-input"
     
     if status == "stopped" and time_count > 0:
+        print(f"\n{'='*50}")
+        print(f"📤 SENDING SHOWER DATA TO BACKEND")
+        print(f"{'='*50}")
+        print(f"   Time: {time_count}s ({time_count/60:.1f} min)")
+        print(f"   Temperature: {temp:.1f}°C")
+        print(f"   Wallet: {RYAN_WALLET[:8]}...{RYAN_WALLET[-4:]}")
+        print(f"   API: {API_URL}")
+        
         try:
             # Prepare data for backend
             payload = {
                 "walletAddress": RYAN_WALLET,
-                "actualTime": time_count,  # Total time in seconds
-                "actualTemp": temp  # Temperature in Celsius
+                "actualTime": int(time_count),  # Ensure integer
+                "actualTemp": float(temp)  # Ensure float
             }
             
-            print(f"\n📤 Sending shower data to backend...")
-            print(f"   Time: {time_count}s ({time_count/60:.1f} min)")
-            print(f"   Temperature: {temp:.1f}°C")
-            
+            print(f"\n📡 Connecting to backend...")
             response = requests.post(API_URL, json=payload, timeout=30)
+            
+            print(f"   Response Status: {response.status_code}")
             
             if response.status_code == 200:
                 data = response.json()
                 if data.get("success"):
-                    print(f"✅ Shower data sent successfully!")
-                    print(f"   Points: {data['data']['points']}")
+                    print(f"\n✅ SHOWER DATA SENT SUCCESSFULLY!")
+                    print(f"   Points earned: {data['data']['points']}")
                     print(f"   CleanEnv Coins: {data['data']['cleanEnvCoins']}")
                     print(f"   SoapToken Coins: {data['data']['soapTokenCoins']}")
-                    if data['data']['blockchainSync']['status'] == 'synced':
+                    
+                    # Show blockchain status
+                    blockchain_status = data['data']['blockchainSync']['status']
+                    if blockchain_status == 'synced':
                         print(f"   ✅ Tokens minted to blockchain")
+                        if data['data']['blockchainSync'].get('soapTokenTx'):
+                            print(f"      SoapToken TX: {data['data']['blockchainSync']['soapTokenTx'][:16]}...")
+                        if data['data']['blockchainSync'].get('cleanEnvTx'):
+                            print(f"      CleanEnv TX: {data['data']['blockchainSync']['cleanEnvTx'][:16]}...")
                     else:
-                        print(f"   ⚠️  Blockchain sync: {data['data']['blockchainSync']['status']}")
+                        print(f"   ⚠️  Blockchain sync: {blockchain_status}")
+                        if data['data']['blockchainSync'].get('error'):
+                            print(f"      Error: {data['data']['blockchainSync']['error']}")
+                    
+                    # Show updated totals
+                    lifetime = data['data']['lifetimeTotal']
+                    print(f"\n📊 Updated Totals:")
+                    print(f"   Lifetime Points: {lifetime['points']}")
+                    print(f"   Total Showers: {lifetime['showers']}")
+                    print(f"   Total CleanEnv Coins: {lifetime['cleanEnvCoins']}")
+                    print(f"   Total SoapToken Coins: {lifetime['soapTokenCoins']}")
+                    print(f"{'='*50}\n")
+                    return True
                 else:
-                    print(f"❌ Backend returned error: {data.get('error', 'Unknown error')}")
+                    print(f"\n❌ Backend returned error:")
+                    print(f"   {data.get('error', 'Unknown error')}")
+                    if 'message' in data:
+                        print(f"   Message: {data['message']}")
+                    print(f"{'='*50}\n")
+                    return False
             else:
-                print(f"❌ Backend request failed: {response.status_code}")
-                print(f"   {response.text}")
+                print(f"\n❌ Backend request failed!")
+                print(f"   Status Code: {response.status_code}")
+                print(f"   Response: {response.text[:500]}")
+                print(f"{'='*50}\n")
+                return False
+        except requests.exceptions.ConnectionError as e:
+            print(f"\n❌ CONNECTION FAILED!")
+            print(f"   Cannot reach backend at {API_URL}")
+            print(f"   Error: {e}")
+            print(f"   Make sure backend server is running: npm run dev")
+            print(f"{'='*50}\n")
+            return False
+        except requests.exceptions.Timeout:
+            print(f"\n❌ REQUEST TIMEOUT!")
+            print(f"   Backend did not respond within 30 seconds")
+            print(f"   Check if backend is running and accessible")
+            print(f"{'='*50}\n")
+            return False
         except requests.exceptions.RequestException as e:
-            print(f"❌ Failed to connect to backend: {e}")
-            print(f"   Make sure backend server is running at {API_URL}")
+            print(f"\n❌ REQUEST ERROR!")
+            print(f"   {type(e).__name__}: {e}")
+            print(f"{'='*50}\n")
+            return False
         except Exception as e:
-            print(f"❌ Error sending data: {e}")
+            print(f"\n❌ UNEXPECTED ERROR!")
+            print(f"   {type(e).__name__}: {e}")
+            import traceback
+            traceback.print_exc()
+            print(f"{'='*50}\n")
+            return False
+    else:
+        print(f"\n⚠️  Skipping send - status: {status}, time: {time_count}")
+        return False
 
 count = 0
 tracker = 0
