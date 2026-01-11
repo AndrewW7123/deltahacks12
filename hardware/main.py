@@ -25,14 +25,46 @@ subprocess.run(["sudo", "hcitool", "cmd", "0x3F", "0x01C", "0x01", "0x02", "0x00
 
 print("Mic Setup")
 
-# Test backend connection at startup
-backend_connected = test_backend_connection()
-if not backend_connected:
-    print("\n⚠️  WARNING: Backend connection test failed!")
-    print("   Shower data will not be saved until connection is established.")
-    print("   Make sure backend is running: npm run dev\n")
-else:
-    print("   Ready to record showers!\n")
+
+def test_backend_connection():
+    """
+    Test connection to backend at startup
+    """
+    RYAN_WALLET = "4nkeeh7vK9J8mN3pQ2rT5wXyZ1aB6cD4eF8gH0iJ2kL9mN1oP3qR5sT7uV9wXfbz6"
+    API_URL = "http://localhost:3001/api/shower/hardware-input"
+    
+    print("\n🔌 Testing backend connection...")
+    try:
+        # Test with minimal data
+        test_payload = {
+            "walletAddress": RYAN_WALLET,
+            "actualTime": 1,
+            "actualTemp": 20
+        }
+        response = requests.post(API_URL, json=test_payload, timeout=5)
+        if response.status_code == 200:
+            data = response.json()
+            if data.get("success"):
+                print("✅ Backend connection successful!")
+                print(f"   Backend is ready to receive shower data")
+                return True
+            else:
+                print(f"⚠️  Backend responded but returned error: {data.get('error', 'Unknown')}")
+                return False
+        else:
+            print(f"⚠️  Backend responded with status {response.status_code}")
+            print(f"   Response: {response.text[:200]}")
+            return False
+    except requests.exceptions.ConnectionError:
+        print(f"❌ Cannot connect to backend at {API_URL}")
+        print("   Make sure backend server is running: npm run dev")
+        return False
+    except requests.exceptions.Timeout:
+        print(f"❌ Backend connection timeout (server may be slow)")
+        return False
+    except Exception as e:
+        print(f"❌ Connection test error: {type(e).__name__}: {e}")
+        return False
 
 
 def record_5_seconds(filename):
@@ -64,40 +96,6 @@ def record_5_seconds(filename):
         print("Done!")
     except Exception as e:
         print(f"Error recording: {e}")
-
-def test_backend_connection():
-    """
-    Test connection to backend at startup
-    """
-    RYAN_WALLET = "4nkeeh7vK9J8mN3pQ2rT5wXyZ1aB6cD4eF8gH0iJ2kL9mN1oP3qR5sT7uV9wXfbz6"
-    API_URL = "http://localhost:3001/api/shower/hardware-input"
-    
-    print("\n🔌 Testing backend connection...")
-    try:
-        # Test with minimal data
-        test_payload = {
-            "walletAddress": RYAN_WALLET,
-            "actualTime": 1,
-            "actualTemp": 20
-        }
-        response = requests.post(API_URL, json=test_payload, timeout=5)
-        if response.status_code == 200:
-            print("✅ Backend connection successful!")
-            return True
-        else:
-            print(f"⚠️  Backend responded with status {response.status_code}")
-            print(f"   Response: {response.text[:200]}")
-            return False
-    except requests.exceptions.ConnectionError:
-        print(f"❌ Cannot connect to backend at {API_URL}")
-        print("   Make sure backend server is running: npm run dev")
-        return False
-    except requests.exceptions.Timeout:
-        print(f"❌ Backend connection timeout")
-        return False
-    except Exception as e:
-        print(f"❌ Connection test error: {e}")
-        return False
 
 def send_sensor_data(hum, temp, time_count, status, audio_path=None):
     """
@@ -204,12 +202,26 @@ def send_sensor_data(hum, temp, time_count, status, audio_path=None):
         print(f"\n⚠️  Skipping send - status: {status}, time: {time_count}")
         return False
 
+# Test backend connection at startup
+backend_connected = test_backend_connection()
+if not backend_connected:
+    print("\n⚠️  WARNING: Backend connection test failed!")
+    print("   Shower data will not be saved until connection is established.")
+    print("   Make sure backend is running: npm run dev\n")
+else:
+    print("   Ready to record showers!\n")
+
+# Initialize sensor tracking variables
 count = 0
 tracker = 0
 distance_storage = []
 stop_counter = 0
 time_total = 1
 max_temp = 0
+
+# Main sensor loop
+print("Starting sensor monitoring loop...")
+print("Waiting for shower to start...\n")
 
 while stop_counter <= 25:
     dist = ultrasonic.distance * 100
