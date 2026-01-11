@@ -64,8 +64,9 @@ def send_sensor_data(hum, temp, time_count, status, audio_path=None):
     # Ryan Chang's wallet address
     RYAN_WALLET = "4nkeeh7vK9J8mN3pQ2rT5wXyZ1aB6cD4eF8gH0iJ2kL9mN1oP3qR5sT7uV9wXfbz6"
     
-    # Backend API URL - update this to match your backend server
-    API_URL = "http://localhost:3001/api/shower/hardware-input"
+    # Backend API URL - can be overridden with environment variable
+    # Default: localhost (for same machine), update if backend is on different machine
+    API_URL = os.getenv("BACKEND_API_URL", "http://localhost:3001/api/shower/hardware-input")
     
     if status == "stopped" and time_count > 0:
         try:
@@ -77,6 +78,7 @@ def send_sensor_data(hum, temp, time_count, status, audio_path=None):
             }
             
             print(f"\n📤 Sending shower data to backend...")
+            print(f"   Endpoint: {API_URL}")
             print(f"   Time: {time_count}s ({time_count/60:.1f} min)")
             print(f"   Temperature: {temp:.1f}°C")
             
@@ -85,33 +87,55 @@ def send_sensor_data(hum, temp, time_count, status, audio_path=None):
             if response.status_code == 200:
                 data = response.json()
                 if data.get("success"):
-                    print(f"✅ Shower data sent successfully!")
+                    print(f"\n✅ Shower data sent successfully!")
                     print(f"   Points: {data['data']['points']}")
                     print(f"   CleanEnv Coins: {data['data']['cleanEnvCoins']}")
                     print(f"   SoapToken Coins: {data['data']['soapTokenCoins']}")
-                    if data['data']['blockchainSync']['status'] == 'synced':
+                    if data['data'].get('blockchainSync', {}).get('status') == 'synced':
                         print(f"   ✅ Tokens minted to blockchain")
+                        if data['data']['blockchainSync'].get('soapTokenTx'):
+                            print(f"   SoapToken TX: {data['data']['blockchainSync']['soapTokenTx'][:16]}...")
+                        if data['data']['blockchainSync'].get('cleanEnvTx'):
+                            print(f"   CleanEnv TX: {data['data']['blockchainSync']['cleanEnvTx'][:16]}...")
                     else:
-                        print(f"   ⚠️  Blockchain sync: {data['data']['blockchainSync']['status']}")
+                        sync_status = data['data'].get('blockchainSync', {}).get('status', 'unknown')
+                        print(f"   ⚠️  Blockchain sync: {sync_status}")
+                        if data['data'].get('blockchainSync', {}).get('error'):
+                            print(f"   Error: {data['data']['blockchainSync']['error']}")
                 else:
-                    print(f"❌ Backend returned error: {data.get('error', 'Unknown error')}")
+                    print(f"\n❌ Backend returned error: {data.get('error', 'Unknown error')}")
             else:
-                print(f"❌ Backend request failed: {response.status_code}")
-                print(f"   {response.text}")
-        except requests.exceptions.RequestException as e:
-            print(f"❌ Failed to connect to backend: {e}")
+                print(f"\n❌ Backend request failed: {response.status_code}")
+                try:
+                    error_data = response.json()
+                    print(f"   Error: {error_data.get('error', response.text)}")
+                except:
+                    print(f"   Response: {response.text[:200]}")
+        except requests.exceptions.Timeout:
+            print(f"\n❌ Request timeout - backend may be slow or unreachable")
+            print(f"   Check if backend is running at {API_URL}")
+        except requests.exceptions.ConnectionError:
+            print(f"\n❌ Connection failed - cannot reach backend")
             print(f"   Make sure backend server is running at {API_URL}")
+            print(f"   If backend is on different machine, set BACKEND_API_URL environment variable")
+        except requests.exceptions.RequestException as e:
+            print(f"\n❌ Request failed: {e}")
         except Exception as e:
-            print(f"❌ Error sending data: {e}")
+            print(f"\n❌ Unexpected error sending data: {e}")
+            import traceback
+            traceback.print_exc()
 
 count = 0
 tracker = 0
 distance_storage = []
 stop_counter = 0
-time_total = 1
+time_total = 0
 max_temp = 0
+shower_completed = False
 
-while stop_counter <= 25:
+print("🚿 Shower monitoring started. Waiting for user...")
+
+while not shower_completed:
     dist = ultrasonic.distance * 100
     temperature = bme280.get_temperature() - 2
     hum = bme280.get_humidity()
@@ -122,14 +146,13 @@ while stop_counter <= 25:
     status = "running" 
     
     #Printing Hum, Temp, Distance Out
-    print(f"Max temp: {max_temp:0.2f}C | Hum: {hum:0.2f}% | Distance: {dist:0.2f} | Elapsed Time: {time_total}")
+    print(f"Max temp: {max_temp:0.2f}C | Hum: {hum:0.2f}% | Distance: {dist:0.2f} | Elapsed Time: {time_total}s")
 
     ##Checking if Audio is Recorded 
     count += 1
     if count == 30:
         count = 0 
         tracker += 1
-        time_total += 5
         record_5_seconds(f"audio{tracker}.wav")
 
     ##Checking if Distance is recorded  
@@ -139,13 +162,18 @@ while stop_counter <= 25:
         stop_counter = 0
     
     if stop_counter == 25:
-        print("No Human detected. Stopping...")
+        print("\n⏹️  No Human detected for 25 seconds. Shower ended.")
         status = "stopped"
-        # Send final shower data to backend
-        send_sensor_data(hum, max_temp, time_total, status)
+        # Send final shower data to backend (only once)
+        if time_total > 0:  # Only send if shower actually happened
+            send_sensor_data(hum, max_temp, time_total, status)
+        shower_completed = True
+        break
 
     time.sleep(1.0)
     time_total += 1
+
+print("\n✅ Shower session completed. Restart the script to monitor another shower.")
     
         
         
