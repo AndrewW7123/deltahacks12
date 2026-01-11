@@ -72,6 +72,18 @@ router.post("/calculate", async (req, res) => {
  */
 router.post("/setup", async (req, res) => {
   try {
+    // Log incoming request
+    console.log("📥 POST /api/profile/setup - Incoming calibration data:", {
+      walletAddress: req.body.walletAddress,
+      displayName: req.body.displayName,
+      hasProfilePhoto: !!req.body.profilePhoto,
+      heightFeet: req.body.heightFeet,
+      heightInches: req.body.heightInches,
+      weightLbs: req.body.weightLbs,
+      hairLength: req.body.hairLength,
+      hairType: req.body.hairType,
+    });
+
     const {
       walletAddress,
       displayName,
@@ -127,6 +139,13 @@ router.post("/setup", async (req, res) => {
     updateData.idealTemp = calculatedGoals.idealTemp;
 
     // Use findOneAndUpdate with upsert to create or update
+    console.log("💾 Saving user to MongoDB with data:", {
+      walletAddress: normalizedWalletAddress,
+      hasDisplayName: !!updateData.displayName,
+      hasIdealTimeRange: !!updateData.idealTimeRange,
+      hasIdealTemp: !!updateData.idealTemp,
+    });
+
     const user = await User.findOneAndUpdate(
       { walletAddress: normalizedWalletAddress },
       updateData,
@@ -137,6 +156,12 @@ router.post("/setup", async (req, res) => {
         setDefaultsOnInsert: true, // Apply defaults when creating new document
       }
     );
+
+    console.log("✅ User saved successfully:", {
+      walletAddress: user.walletAddress,
+      displayName: user.displayName,
+      _id: user._id,
+    });
 
     res.status(200).json({
       success: true,
@@ -207,6 +232,77 @@ router.get("/:walletAddress", async (req, res) => {
     }
   } catch (error) {
     console.error("Error in GET /:walletAddress:", error);
+    res.status(500).json({
+      success: false,
+      error: "Internal server error",
+      message: error.message,
+    });
+  }
+});
+
+/**
+ * GET /weekly-schedule/:walletAddress
+ * Retrieves weekly shower schedule data and generates a graph description using Gemini
+ * Returns { success: true, graph: string } or { success: false, error: string }
+ */
+router.get("/weekly-schedule/:walletAddress", async (req, res) => {
+  try {
+    const { walletAddress } = req.params;
+
+    if (!walletAddress) {
+      return res.status(400).json({
+        success: false,
+        error: "walletAddress is required",
+      });
+    }
+
+    // Normalize wallet address
+    const normalizedWalletAddress = walletAddress.toLowerCase().trim();
+
+    // Find user
+    const user = await User.findOne({ walletAddress: normalizedWalletAddress }).select(
+      "walletAddress dailyScores"
+    );
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        error: "User not found",
+      });
+    }
+
+    // Get the last 7 days of data
+    const today = new Date();
+    today.setUTCHours(0, 0, 0, 0);
+    
+    const sevenDaysAgo = new Date(today);
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
+    // Filter dailyScores for the last 7 days
+    const weeklyData = user.dailyScores
+      .filter((score) => {
+        const scoreDate = new Date(score.date);
+        scoreDate.setUTCHours(0, 0, 0, 0);
+        return scoreDate >= sevenDaysAgo && scoreDate <= today;
+      })
+      .map((score) => ({
+        date: score.date,
+        showerCount: score.showerCount || 0,
+        totalPoints: score.totalPoints || 0,
+        showers: score.showers || [],
+      }))
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    // Import and use Gemini graph generator
+    const { generateWeeklyScheduleGraph } = await import("../utils/geminiGraphGenerator.js");
+    const graphDescription = await generateWeeklyScheduleGraph(weeklyData);
+
+    res.status(200).json({
+      success: true,
+      graph: graphDescription,
+    });
+  } catch (error) {
+    console.error("Error in GET /weekly-schedule:", error);
     res.status(500).json({
       success: false,
       error: "Internal server error",

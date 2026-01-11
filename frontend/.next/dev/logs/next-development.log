@@ -1,254 +1,6 @@
-[00:00:00.973] Server  LOG     ✓ Ready in 612ms
-[00:00:06.120] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.335] Browser ERROR   Error fetching leaderboard: {}
-[00:00:06.335] Browser ERROR   Error fetching leaderboard: {}
-[00:00:36.328] Browser ERROR   Error fetching leaderboard: {}
-[00:00:36.328] Browser ERROR   Error fetching leaderboard: {}
-[00:01:06.329] Browser ERROR   Error fetching leaderboard: {}
-[00:01:06.330] Browser ERROR   Error fetching leaderboard: {}
-[00:01:36.329] Browser ERROR   Error fetching leaderboard: {}
-[00:01:36.329] Browser ERROR   Error fetching leaderboard: {}
-[00:02:06.329] Browser ERROR   Error fetching leaderboard: {}
-[00:02:06.330] Browser ERROR   Error fetching leaderboard: {}
-[00:02:36.329] Browser ERROR   Error fetching leaderboard: {}
-[00:02:36.329] Browser ERROR   Error fetching leaderboard: {}
-[00:03:06.332] Browser ERROR   Error fetching leaderboard: {}
-[00:03:06.332] Browser ERROR   Error fetching leaderboard: {}
-[00:03:36.331] Browser ERROR   Error fetching leaderboard: {}
-[00:03:36.332] Browser ERROR   Error fetching leaderboard: {}
-[00:04:06.328] Browser ERROR   Error fetching leaderboard: {}
-[00:04:06.328] Browser ERROR   Error fetching leaderboard: {}
-[00:04:36.328] Browser ERROR   Error fetching leaderboard: {}
-[00:04:36.328] Browser ERROR   Error fetching leaderboard: {}
-[00:05:06.324] Browser ERROR   Error fetching leaderboard: {}
-[00:05:06.324] Browser ERROR   Error fetching leaderboard: {}
-[00:05:36.334] Browser ERROR   Error fetching leaderboard: {}
-[00:05:36.334] Browser ERROR   Error fetching leaderboard: {}
-[00:06:06.330] Browser ERROR   Error fetching leaderboard: {}
-[00:06:06.330] Browser ERROR   Error fetching leaderboard: {}
-[00:06:36.335] Browser ERROR   Error fetching leaderboard: {}
-[00:06:36.335] Browser ERROR   Error fetching leaderboard: {}
-[00:07:06.331] Browser ERROR   Error fetching leaderboard: {}
-[00:07:06.332] Browser ERROR   Error fetching leaderboard: {}
-[00:07:36.334] Browser ERROR   Error fetching leaderboard: {}
-[00:07:36.334] Browser ERROR   Error fetching leaderboard: {}
-[00:08:07.338] Browser ERROR   Error fetching leaderboard: {}
-[00:08:07.338] Browser ERROR   Error fetching leaderboard: {}
-[00:08:37.337] Browser ERROR   Error fetching leaderboard: {}
-[00:08:37.337] Browser ERROR   Error fetching leaderboard: {}
-[00:09:32.334] Browser ERROR   Error fetching leaderboard: {}
-[00:09:32.334] Browser ERROR   Error fetching leaderboard: {}
-[00:10:09.184] Browser ERROR   Error fetching leaderboard: {}
-[00:10:09.184] Browser ERROR   Error fetching leaderboard: {}
-[00:10:10.987] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:11.210] Browser ERROR   Error fetching leaderboard: {}
-[00:10:11.210] Browser ERROR   Error fetching leaderboard: {}
-[00:10:41.146] Browser ERROR   Error fetching leaderboard: {}
-[00:10:41.146] Browser ERROR   Error fetching leaderboard: {}
-[00:11:12.334] Browser ERROR   Error fetching leaderboard: {}
-[00:11:12.334] Browser ERROR   Error fetching leaderboard: {}
-[00:11:42.334] Browser ERROR   Error fetching leaderboard: {}
-[00:11:42.335] Browser ERROR   Error fetching leaderboard: {}
-[00:12:12.334] Browser ERROR   Error fetching leaderboard: {}
-[00:12:12.334] Browser ERROR   Error fetching leaderboard: {}
-[00:12:42.335] Browser ERROR   Error fetching leaderboard: {}
-[00:12:42.335] Browser ERROR   Error fetching leaderboard: {}
-[00:13:12.340] Browser ERROR   Error fetching leaderboard: {}
-[00:13:12.340] Browser ERROR   Error fetching leaderboard: {}
-[00:14:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:14:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:15:32.334] Browser ERROR   Error fetching leaderboard: {}
-[00:15:32.334] Browser ERROR   Error fetching leaderboard: {}
-[00:16:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:16:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:17:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:17:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:18:32.336] Browser ERROR   Error fetching leaderboard: {}
-[00:18:32.336] Browser ERROR   Error fetching leaderboard: {}
-[00:19:32.334] Browser ERROR   Error fetching leaderboard: {}
-[00:19:32.334] Browser ERROR   Error fetching leaderboard: {}
-[00:20:32.337] Browser ERROR   Error fetching leaderboard: {}
-[00:20:32.337] Browser ERROR   Error fetching leaderboard: {}
-[00:21:32.338] Browser ERROR   Error fetching leaderboard: {}
-[00:21:32.338] Browser ERROR   Error fetching leaderboard: {}
-[00:22:32.333] Browser ERROR   Error fetching leaderboard: {}
-[00:22:32.333] Browser ERROR   Error fetching leaderboard: {}
-[00:23:32.337] Browser ERROR   Error fetching leaderboard: {}
-[00:23:32.337] Browser ERROR   Error fetching leaderboard: {}
-[00:24:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:24:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:25:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:25:32.336] Browser ERROR   Error fetching leaderboard: {}
-[00:26:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:26:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:27:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:27:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:28:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:28:32.336] Browser ERROR   Error fetching leaderboard: {}
-[00:29:32.336] Browser ERROR   Error fetching leaderboard: {}
-[00:29:32.337] Browser ERROR   Error fetching leaderboard: {}
-[00:30:32.335] Browser ERROR   Error fetching leaderboard: {}
-[00:30:32.336] Browser ERROR   Error fetching leaderboard: {}
-[00:31:32.336] Browser ERROR   Error fetching leaderboard: {}
-[00:31:32.337] Browser ERROR   Error fetching leaderboard: {}
-[00:32:04.346] Browser ERROR   Error fetching leaderboard: {}
-[00:32:04.346] Browser ERROR   Error fetching leaderboard: {}
-[00:32:06.164] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:32:06.395] Browser ERROR   Error fetching leaderboard: {}
-[00:32:06.395] Browser ERROR   Error fetching leaderboard: {}
-[00:32:36.363] Browser ERROR   Error fetching leaderboard: {}
-[00:32:36.363] Browser ERROR   Error fetching leaderboard: {}
-[00:32:54.405] Server  LOG     ✓ Compiled in 448ms
-[00:32:54.486] Browser ERROR   uncaughtError: ReferenceError: showShowerTransition is not defined
-[00:32:55.154] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:32:55.274] Server  LOG     ✓ Compiled in 20ms
-[00:32:55.361] Browser ERROR   Error fetching leaderboard: {}
-[00:32:55.361] Browser ERROR   Error fetching leaderboard: {}
-[00:32:55.581] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:32:55.873] Browser ERROR   Error fetching leaderboard: {}
-[00:32:55.873] Browser ERROR   Error fetching leaderboard: {}
-[00:33:02.853] Server  LOG     ✓ Compiled in 44ms
-[00:33:25.850] Browser ERROR   Error fetching leaderboard: {}
-[00:33:25.850] Browser ERROR   Error fetching leaderboard: {}
-[00:33:52.412] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:35:02.155] Server  LOG     ✓ Compiled in 12ms
-[00:35:06.267] Server  LOG     ✓ Compiled in 69ms
-[00:35:10.154] Server  LOG     ✓ Compiled in 41ms
-[00:35:11.702] Server  LOG     ✓ Compiled in 12ms
-[00:35:14.221] Server  LOG     ✓ Compiled in 12ms
-[00:35:16.949] Server  LOG     ✓ Compiled in 17ms
-[00:35:20.073] Server  LOG     ✓ Compiled in 23ms
-[00:35:53.195] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:35:54.200] Browser ERROR   Error fetching leaderboard: {}
-[00:35:54.200] Browser ERROR   Error fetching leaderboard: {}
-[00:35:54.200] Browser ERROR   Error fetching leaderboard: {}
-[00:35:54.200] Browser ERROR   Error fetching leaderboard: {}
-[00:35:55.693] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:35:55.853] Browser ERROR   Error fetching leaderboard: {}
-[00:35:55.853] Browser ERROR   Error fetching leaderboard: {}
-[00:36:25.862] Browser ERROR   Error fetching leaderboard: {}
-[00:36:25.863] Browser ERROR   Error fetching leaderboard: {}
-[00:36:55.854] Browser ERROR   Error fetching leaderboard: {}
-[00:36:55.854] Browser ERROR   Error fetching leaderboard: {}
-[00:37:13.065] Server  LOG     ✓ Compiled in 79ms
-[00:37:25.863] Browser ERROR   Error fetching leaderboard: {}
-[00:37:25.863] Browser ERROR   Error fetching leaderboard: {}
-[00:37:55.859] Browser ERROR   Error fetching leaderboard: {}
-[00:37:55.860] Browser ERROR   Error fetching leaderboard: {}
-[00:38:20.457] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:38:23.338] Browser ERROR   {"name":"WalletNotReadyError"} {"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"NotDetected","_wallet":null,"icon":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==","name":"Phantom","supportedTransactionVersions":{},"url":"https://phantom.app"}
-[00:55:46.321] Browser ERROR   Error fetching leaderboard: {}
-[00:55:46.321] Browser ERROR   Error fetching leaderboard: {}
-[00:55:46.321] Browser ERROR   Error fetching leaderboard: {}
-[00:55:46.321] Browser ERROR   Error fetching leaderboard: {}
-[00:56:17.787] Browser ERROR   Error fetching leaderboard: {}
-[00:56:17.787] Browser ERROR   Error fetching leaderboard: {}
-[00:56:47.786] Browser ERROR   Error fetching leaderboard: {}
-[00:56:47.786] Browser ERROR   Error fetching leaderboard: {}
-[00:57:17.786] Browser ERROR   Error fetching leaderboard: {}
-[00:57:17.786] Browser ERROR   Error fetching leaderboard: {}
-[00:57:47.787] Browser ERROR   Error fetching leaderboard: {}
-[00:57:47.787] Browser ERROR   Error fetching leaderboard: {}
-[00:58:17.786] Browser ERROR   Error fetching leaderboard: {}
-[00:58:17.787] Browser ERROR   Error fetching leaderboard: {}
-[00:58:47.787] Browser ERROR   Error fetching leaderboard: {}
-[00:58:47.787] Browser ERROR   Error fetching leaderboard: {}
-[00:59:25.787] Browser ERROR   Error fetching leaderboard: {}
-[00:59:25.787] Browser ERROR   Error fetching leaderboard: {}
-[01:00:25.785] Browser ERROR   Error fetching leaderboard: {}
-[01:00:25.785] Browser ERROR   Error fetching leaderboard: {}
-[01:01:24.855] Browser ERROR   Error fetching leaderboard: {}
-[01:01:24.855] Browser ERROR   Error fetching leaderboard: {}
-[01:03:29.848] Browser ERROR   Error fetching leaderboard: {}
-[01:03:29.848] Browser ERROR   Error fetching leaderboard: {}
-[01:04:29.847] Browser ERROR   Error fetching leaderboard: {}
-[01:04:29.847] Browser ERROR   Error fetching leaderboard: {}
-[01:05:29.850] Browser ERROR   Error fetching leaderboard: {}
-[01:05:29.850] Browser ERROR   Error fetching leaderboard: {}
-[01:06:29.848] Browser ERROR   Error fetching leaderboard: {}
-[01:06:29.848] Browser ERROR   Error fetching leaderboard: {}
-[01:07:29.846] Browser ERROR   Error fetching leaderboard: {}
-[01:07:29.846] Browser ERROR   Error fetching leaderboard: {}
-[01:09:02.173] Browser ERROR   Error fetching leaderboard: {}
-[01:09:02.174] Browser ERROR   Error fetching leaderboard: {}
-[01:10:02.173] Browser ERROR   Error fetching leaderboard: {}
-[01:10:02.173] Browser ERROR   Error fetching leaderboard: {}
-[01:11:02.173] Browser ERROR   Error fetching leaderboard: {}
-[01:11:02.173] Browser ERROR   Error fetching leaderboard: {}
-[01:12:02.173] Browser ERROR   Error fetching leaderboard: {}
-[01:12:02.173] Browser ERROR   Error fetching leaderboard: {}
-[01:13:02.174] Browser ERROR   Error fetching leaderboard: {}
-[01:13:02.174] Browser ERROR   Error fetching leaderboard: {}
-[01:14:02.173] Browser ERROR   Error fetching leaderboard: {}
-[01:14:02.173] Browser ERROR   Error fetching leaderboard: {}
-[01:15:03.468] Browser ERROR   Error fetching leaderboard: {}
-[01:15:03.469] Browser ERROR   Error fetching leaderboard: {}
-[01:32:26.017] Browser ERROR   Error fetching leaderboard: {}
-[01:32:26.018] Browser ERROR   Error fetching leaderboard: {}
-[01:34:00.144] Browser ERROR   Error fetching leaderboard: {}
-[01:34:00.144] Browser ERROR   Error fetching leaderboard: {}
-[01:39:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:39:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:40:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:40:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:40:36.282] Browser ERROR   Error fetching leaderboard: {}
-[01:40:36.282] Browser ERROR   Error fetching leaderboard: {}
-[01:41:06.280] Browser ERROR   Error fetching leaderboard: {}
-[01:41:06.280] Browser ERROR   Error fetching leaderboard: {}
-[01:42:14.280] Browser ERROR   Error fetching leaderboard: {}
-[01:42:14.280] Browser ERROR   Error fetching leaderboard: {}
-[01:43:14.280] Browser ERROR   Error fetching leaderboard: {}
-[01:43:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:44:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:44:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:45:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:45:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:46:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:46:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:47:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:47:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:48:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:48:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:49:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:49:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:50:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:50:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:51:14.280] Browser ERROR   Error fetching leaderboard: {}
-[01:51:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:52:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:52:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:53:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:53:14.281] Browser ERROR   Error fetching leaderboard: {}
-[01:54:14.282] Browser ERROR   Error fetching leaderboard: {}
-[01:54:14.282] Browser ERROR   Error fetching leaderboard: {}
-[01:55:14.282] Browser ERROR   Error fetching leaderboard: {}
-[01:55:14.282] Browser ERROR   Error fetching leaderboard: {}
-[01:56:14.363] Browser ERROR   Error fetching leaderboard: {}
-[01:56:14.367] Browser ERROR   Error fetching leaderboard: {}
-[01:56:34.785] Browser ERROR   Error fetching leaderboard: {}
-[01:56:34.785] Browser ERROR   Error fetching leaderboard: {}
-[01:56:46.562] Browser ERROR   Error fetching leaderboard: {}
-[01:56:46.562] Browser ERROR   Error fetching leaderboard: {}
-[01:56:46.562] Browser ERROR   Error fetching leaderboard: {}
-[01:56:46.562] Browser ERROR   Error fetching leaderboard: {}
-[01:57:18.281] Browser ERROR   Error fetching leaderboard: {}
-[01:57:18.281] Browser ERROR   Error fetching leaderboard: {}
-[01:57:48.279] Browser ERROR   Error fetching leaderboard: {}
-[01:57:48.280] Browser ERROR   Error fetching leaderboard: {}
-[01:58:18.280] Browser ERROR   Error fetching leaderboard: {}
-[01:58:18.280] Browser ERROR   Error fetching leaderboard: {}
-[01:58:48.280] Browser ERROR   Error fetching leaderboard: {}
-[01:58:48.280] Browser ERROR   Error fetching leaderboard: {}
-[01:59:18.280] Browser ERROR   Error fetching leaderboard: {}
-[01:59:18.281] Browser ERROR   Error fetching leaderboard: {}
-[01:59:48.281] Browser ERROR   Error fetching leaderboard: {}
-[01:59:48.281] Browser ERROR   Error fetching leaderboard: {}
-[02:01:07.596] Browser ERROR   Error fetching leaderboard: {}
-[02:01:07.596] Browser ERROR   Error fetching leaderboard: {}
-[02:01:12.281] Browser ERROR   {"name":"WalletNotReadyError"} {"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"NotDetected","_wallet":null,"icon":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==","name":"Phantom","supportedTransactionVersions":{},"url":"https://phantom.app"}
-[02:02:04.837] Server  LOG     ✓ Compiled in 0ms
-[02:02:10.382] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:02:10.722] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+[00:00:00.691] Server  LOG     ✓ Ready in 501ms
+[00:00:01.699] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:01.864] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -261,63 +13,59 @@ It can also happen if the client has a browser extension installed which messes 
 https://react.dev/link/hydration-mismatch
 
   ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/profile" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/frontend/...">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="outfit_43da297c-module__3wKUgG__className"
--                           data-new-gr-c-s-check-loaded="14.1268.0"
--                           data-gr-ext-installed=""
-                          >
-                            ...
-                              <BaseWalletConnectionButton className="!bg-primar..." aria-expanded={false} style={{...}} ...>
-                                <Button className="wallet-ada..." aria-expanded={false} style={{...}} ...>
-                                  <button className="wallet-ada..." disabled={undefined} style={{...}} ...>
-+                                   <i className="wallet-adapter-button-start-icon">
--                                   Select Wallet
-                                    ...
-                  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/profile" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+            <SegmentViewNode type="page" pagePath="/frontend/...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function ProfilePage} serverProvidedParams={{...}}>
+                <ProfilePage params={Promise} searchParams={Promise}>
+                  <main className="min-h-scre...">
+                    <Navbar>
+                    <div className="container ...">
+                      <div className="flex flex-...">
+                        <div className="w-full bg-...">
+                          <div>
+                          <div>
+                          <div className="mt-4 p-3 b...">
+                            <p>
+                            <p>
+                            <p>
+                            <p>
++                             Phantom
+-                             None
+                          ...
+            ...
+          ...
 
-[02:02:14.669] Server  LOG     ✓ Compiled in 23ms
-[02:02:18.014] Server  LOG     ✓ Compiled in 237ms
-[02:02:20.500] Server  LOG     ✓ Compiled in 35ms
-[02:02:22.096] Server  LOG     ✓ Compiled in 12ms
-[02:02:23.419] Server  LOG     ✓ Compiled in 13ms
-[02:02:30.919] Server  LOG     ✓ Compiled in 12ms
-[02:02:34.536] Server  LOG     ✓ Compiled in 11ms
-[02:02:49.888] Server  LOG     ✓ Compiled in 36ms
-[02:02:49.962] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
-
-Previous: %s
-Incoming: %s useEffect [false, , /profile, [object Object]] [false, , /profile]
-[02:03:00.629] Server  LOG     ✓ Compiled in 16ms
-[02:03:39.282] Browser ERROR   {"name":"WalletNotReadyError"} {"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"NotDetected","_wallet":null,"icon":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==","name":"Phantom","supportedTransactionVersions":{},"url":"https://phantom.app"}
-[02:04:56.190] Server  LOG     ✓ Compiled in 86ms
-[02:04:56.280] Browser ERROR   uncaughtError: ReferenceError: useRouter is not defined
-[02:05:00.305] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[02:05:00.416] Server  LOG     ✓ Compiled in 17ms
-[02:05:00.897] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:05:01.282] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+[00:00:01.864] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Phantom"}
+[00:00:01.864] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Phantom"}
+[00:01:03.030] Server  LOG     ✓ Compiled in 272ms
+[00:01:03.118] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Phantom"}
+[00:01:08.150] Server  LOG     ✓ Compiled in 19ms
+[00:01:30.092] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Solflare"}
+[00:01:30.092] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:03:16.961] Server  WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:03:17.333] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:17.710] Server  LOG     ✓ Compiled in 6ms
+[00:03:17.925] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:03:17.925] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:04:34.664] Server  LOG     ✓ Compiled in 0ms
+[00:04:34.986] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:35.921] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:04:49.371] Server  LOG     ✓ Compiled in 47ms
+[00:04:49.922] Browser ERROR   uncaughtError: ReferenceError: useWalletModal is not defined
+[00:04:51.096] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:04:51.214] Server  LOG     ✓ Compiled in 18ms
+[00:04:51.561] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:51.922] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:04:52.316] Server  LOG     ✓ Compiled in 20ms
+[00:04:52.921] Browser ERROR   uncaughtError: ReferenceError: handleConnectClick is not defined
+[00:04:55.268] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:04:55.343] Server  LOG     ✓ Compiled in 58ms
+[00:04:55.691] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:56.921] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -342,11 +90,11 @@ https://react.dev/link/hydration-mismatch
                   <div>
                   <div className="space-y-4">
                     <div className="flex justi...">
-                      <WalletMultiButton className="!bg-primar...">
-                        <BaseWalletMultiButton className="!bg-primar..." labels={{...}}>
+                      <WalletMultiButton>
+                        <BaseWalletMultiButton labels={{...}}>
                           <div className="wallet-ada...">
-                            <BaseWalletConnectionButton className="!bg-primar..." aria-expanded={false} style={{...}} ...>
-                              <Button className="wallet-ada..." aria-expanded={false} style={{...}} ...>
+                            <BaseWalletConnectionButton aria-expanded={false} style={{...}} onClick={function onClick} ...>
+                              <Button aria-expanded={false} style={{...}} onClick={function onClick} ...>
                                 <button className="wallet-ada..." disabled={undefined} style={{...}} ...>
 +                                 <i className="wallet-adapter-button-start-icon">
 -                                 Select Wallet
@@ -354,22 +102,264 @@ https://react.dev/link/hydration-mismatch
                             ...
                   ...
 
-[02:05:03.855] Server  LOG     ✓ Compiled in 13ms
-[02:05:06.900] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[02:05:06.900] Browser ERROR   Error fetching leaderboard: {}
-[02:05:06.900] Browser ERROR   Error fetching leaderboard: {}
-[02:05:06.900] Browser ERROR   Error fetching leaderboard: {}
-[02:05:06.900] Browser ERROR   Error fetching leaderboard: {}
-[02:05:12.703] Server  LOG     ✓ Compiled in 42ms
-[02:05:16.549] Server  LOG     ✓ Compiled in 26ms
-[02:05:25.049] Server  LOG     ✓ Compiled in 52ms
-[02:05:25.177] Browser ERROR   Error fetching leaderboard: {}
-[02:05:25.177] Browser ERROR   Error fetching leaderboard: {}
-[02:05:25.432] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:05:25.766] Browser ERROR   Error fetching leaderboard: {}
-[02:05:25.766] Browser ERROR   Error fetching leaderboard: {}
-[02:05:53.163] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:05:53.333] Browser ERROR   Error fetching leaderboard: {}
-[02:05:53.333] Browser ERROR   Error fetching leaderboard: {}
-[02:05:54.185] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[02:05:55.288] Browser ERROR   {"name":"WalletNotReadyError"} {"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"NotDetected","_wallet":null,"icon":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==","name":"Phantom","supportedTransactionVersions":{},"url":"https://phantom.app"}
+[00:04:56.921] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:05:29.401] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:29.626] Browser ERROR   Error fetching leaderboard: {}
+[00:05:29.626] Browser ERROR   Error fetching leaderboard: {}
+[00:05:31.768] Browser ERROR   {"name":"WalletConnectionError"} {"_config":{},"_connecting":true,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"Loadable","_wallet":null,"icon":"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJTIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMjA1MGE7c3Ryb2tlOiNmZmVmNDY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOi41cHg7fS5jbHMtMntmaWxsOiNmZmVmNDY7fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJjbHMtMiIgeD0iMCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiByeD0iMTIiIHJ5PSIxMiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LjIzLDI2LjQybDIuNDYtMi4zOCw0LjU5LDEuNWMzLjAxLDEsNC41MSwyLjg0LDQuNTEsNS40MywwLDEuOTYtLjc1LDMuMjYtMi4yNSw0LjkzbC0uNDYuNS4xNy0xLjE3Yy42Ny00LjI2LS41OC02LjA5LTQuNzItNy40M2wtNC4zLTEuMzhoMFpNMTguMDUsMTEuODVsMTIuNTIsNC4xNy0yLjcxLDIuNTktNi41MS0yLjE3Yy0yLjI1LS43NS0zLjAxLTEuOTYtMy4zLTQuNTF2LS4wOGgwWk0xNy4zLDMzLjA2bDIuODQtMi43MSw1LjM0LDEuNzVjMi44LjkyLDMuNzYsMi4xMywzLjQ2LDUuMThsLTExLjY1LTQuMjJoMFpNMTMuNzEsMjAuOTVjMC0uNzkuNDItMS41NCwxLjEzLTIuMTcuNzUsMS4wOSwyLjA1LDIuMDUsNC4wOSwyLjcxbDQuNDIsMS40Ni0yLjQ2LDIuMzgtNC4zNC0xLjQyYy0yLS42Ny0yLjg0LTEuNjctMi44NC0yLjk2TTI2LjgyLDQyLjg3YzkuMTgtNi4wOSwxNC4xMS0xMC4yMywxNC4xMS0xNS4zMiwwLTMuMzgtMi01LjI2LTYuNDMtNi43MmwtMy4zNC0xLjEzLDkuMTQtOC43Ny0xLjg0LTEuOTYtMi43MSwyLjM4LTEyLjgxLTQuMjJjLTMuOTcsMS4yOS04Ljk3LDUuMDktOC45Nyw4Ljg5LDAsLjQyLjA0LjgzLjE3LDEuMjktMy4zLDEuODgtNC42MywzLjYzLTQuNjMsNS44LDAsMi4wNSwxLjA5LDQuMDksNC41NSw1LjIybDIuNzUuOTItOS41Miw5LjE0LDEuODQsMS45NiwyLjk2LTIuNzEsMTQuNzMsNS4yMmgwWiIvPjwvc3ZnPg==","name":"Solflare","supportedTransactionVersions":{},"url":"https://solflare.com"}
+[00:05:34.174] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:05:34.174] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:05:36.046] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Phantom"}
+[00:05:37.923] Browser ERROR   {"name":"WalletNotReadyError"} {"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"NotDetected","_wallet":null,"icon":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==","name":"Phantom","supportedTransactionVersions":{},"url":"https://phantom.app"}
+[00:05:40.922] Browser ERROR   {"name":"WalletNotReadyError"} {"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"NotDetected","_wallet":null,"icon":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==","name":"Phantom","supportedTransactionVersions":{},"url":"https://phantom.app"}
+[00:05:43.923] Browser ERROR   {"name":"WalletNotReadyError"} {"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"NotDetected","_wallet":null,"icon":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==","name":"Phantom","supportedTransactionVersions":{},"url":"https://phantom.app"}
+[00:05:46.922] Browser ERROR   {"name":"WalletNotReadyError"} {"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"NotDetected","_wallet":null,"icon":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==","name":"Phantom","supportedTransactionVersions":{},"url":"https://phantom.app"}
+[00:05:49.160] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:49.328] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="/frontend/...">
+      <SegmentTrieNode>
+      <ClientPageRoot Component={function ProfilePage} serverProvidedParams={{...}}>
+        <ProfilePage params={Promise} searchParams={Promise}>
+          <main className="min-h-scre...">
+            <Navbar>
+            <div className="container ...">
+              <div className="flex flex-...">
+                <div className="w-full bg-...">
+                  <div>
+                  <div className="space-y-4">
+                    <div className="flex justi...">
+                      <WalletMultiButton>
+                        <BaseWalletMultiButton labels={{...}}>
+                          <div className="wallet-ada...">
+                            <BaseWalletConnectionButton aria-expanded={false} style={{...}} onClick={function onClick} ...>
+                              <Button aria-expanded={false} style={{...}} onClick={function onClick} ...>
+                                <button className="wallet-ada..." disabled={undefined} style={{...}} ...>
++                                 <i className="wallet-adapter-button-start-icon">
+-                                 Select Wallet
+                                  ...
+                            ...
+                  ...
+
+[00:05:49.328] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Phantom"}
+[00:05:56.921] Browser ERROR   {"name":"WalletNotReadyError"} {"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"NotDetected","_wallet":null,"icon":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==","name":"Phantom","supportedTransactionVersions":{},"url":"https://phantom.app"}
+[00:06:22.373] Server  LOG     ✓ Compiled in 88ms
+[00:07:32.922] Browser ERROR   {"name":"WalletNotReadyError"} {"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"NotDetected","_wallet":null,"icon":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==","name":"Phantom","supportedTransactionVersions":{},"url":"https://phantom.app"}
+[00:07:44.002] Server  LOG     ✓ Compiled in 86ms
+[00:07:44.062] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:07:44.062] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Phantom"}
+[00:07:44.846] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Phantom"}
+[00:07:49.427] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Solflare"}
+[00:07:49.427] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:08:26.782] Browser ERROR   {"name":"WalletConnectionError"} {"_config":{},"_connecting":true,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"Loadable","_wallet":null,"icon":"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJTIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMjA1MGE7c3Ryb2tlOiNmZmVmNDY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOi41cHg7fS5jbHMtMntmaWxsOiNmZmVmNDY7fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJjbHMtMiIgeD0iMCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiByeD0iMTIiIHJ5PSIxMiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LjIzLDI2LjQybDIuNDYtMi4zOCw0LjU5LDEuNWMzLjAxLDEsNC41MSwyLjg0LDQuNTEsNS40MywwLDEuOTYtLjc1LDMuMjYtMi4yNSw0LjkzbC0uNDYuNS4xNy0xLjE3Yy42Ny00LjI2LS41OC02LjA5LTQuNzItNy40M2wtNC4zLTEuMzhoMFpNMTguMDUsMTEuODVsMTIuNTIsNC4xNy0yLjcxLDIuNTktNi41MS0yLjE3Yy0yLjI1LS43NS0zLjAxLTEuOTYtMy4zLTQuNTF2LS4wOGgwWk0xNy4zLDMzLjA2bDIuODQtMi43MSw1LjM0LDEuNzVjMi44LjkyLDMuNzYsMi4xMywzLjQ2LDUuMThsLTExLjY1LTQuMjJoMFpNMTMuNzEsMjAuOTVjMC0uNzkuNDItMS41NCwxLjEzLTIuMTcuNzUsMS4wOSwyLjA1LDIuMDUsNC4wOSwyLjcxbDQuNDIsMS40Ni0yLjQ2LDIuMzgtNC4zNC0xLjQyYy0yLS42Ny0yLjg0LTEuNjctMi44NC0yLjk2TTI2LjgyLDQyLjg3YzkuMTgtNi4wOSwxNC4xMS0xMC4yMywxNC4xMS0xNS4zMiwwLTMuMzgtMi01LjI2LTYuNDMtNi43MmwtMy4zNC0xLjEzLDkuMTQtOC43Ny0xLjg0LTEuOTYtMi43MSwyLjM4LTEyLjgxLTQuMjJjLTMuOTcsMS4yOS04Ljk3LDUuMDktOC45Nyw4Ljg5LDAsLjQyLjA0LjgzLjE3LDEuMjktMy4zLDEuODgtNC42MywzLjYzLTQuNjMsNS44LDAsMi4wNSwxLjA5LDQuMDksNC41NSw1LjIybDIuNzUuOTItOS41Miw5LjE0LDEuODQsMS45NiwyLjk2LTIuNzEsMTQuNzMsNS4yMmgwWiIvPjwvc3ZnPg==","name":"Solflare","supportedTransactionVersions":{},"url":"https://solflare.com"}
+[00:08:26.783] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:10:49.260] Server  LOG     ✓ Compiled in 81ms
+[00:10:50.410] Server  LOG     ✓ Compiled in 27ms
+[00:10:58.558] Server  LOG     ✓ Compiled in 24ms
+[00:10:58.921] Browser ERROR   uncaughtError: ReferenceError: useRouter is not defined
+[00:11:22.472] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:11:22.493] Server  LOG     ✓ Compiled in 162ms
+[00:11:23.095] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:23.927] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:11:24.276] Server  LOG     ✓ Compiled in 12ms
+[00:11:29.543] Server  LOG     ✓ Compiled in 14ms
+[00:11:35.910] Server  LOG     ✓ Compiled in 14ms
+[00:13:47.317] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:47.526] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:13:53.332] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:53.519] Browser ERROR   Error fetching leaderboard: {}
+[00:13:53.519] Browser ERROR   Error fetching leaderboard: {}
+[00:13:54.985] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:13:54.985] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:13:54.985] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:13:56.590] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Phantom"}
+[00:13:59.567] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Solflare"}
+[00:13:59.567] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:15:48.336] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:48.491] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:15:50.767] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Solflare"}
+[00:15:50.767] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:18:35.724] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:35.886] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/profile" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+            <SegmentViewNode type="page" pagePath="/frontend/...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function ProfilePage} serverProvidedParams={{...}}>
+                <ProfilePage params={Promise} searchParams={Promise}>
+                  <main className="min-h-scre...">
+                    <Navbar>
+                    <div className="container ...">
+                      <div className="flex flex-...">
+                        <div className="w-full bg-...">
+                          <div>
+                          <div>
+                          <div className="mt-4 p-3 b...">
+                            <p>
+                            <p>
+                            <p>
+                            <p>
++                             Solflare
+-                             None
+                          ...
+            ...
+          ...
+
+[00:18:35.886] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Solflare"}
+[00:18:35.886] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Solflare"}
+[00:18:35.886] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:18:36.497] Browser ERROR   {"name":"WalletConnectionError"} {"_config":{},"_connecting":true,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"Loadable","_wallet":null,"icon":"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJTIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMjA1MGE7c3Ryb2tlOiNmZmVmNDY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOi41cHg7fS5jbHMtMntmaWxsOiNmZmVmNDY7fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJjbHMtMiIgeD0iMCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiByeD0iMTIiIHJ5PSIxMiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LjIzLDI2LjQybDIuNDYtMi4zOCw0LjU5LDEuNWMzLjAxLDEsNC41MSwyLjg0LDQuNTEsNS40MywwLDEuOTYtLjc1LDMuMjYtMi4yNSw0LjkzbC0uNDYuNS4xNy0xLjE3Yy42Ny00LjI2LS41OC02LjA5LTQuNzItNy40M2wtNC4zLTEuMzhoMFpNMTguMDUsMTEuODVsMTIuNTIsNC4xNy0yLjcxLDIuNTktNi41MS0yLjE3Yy0yLjI1LS43NS0zLjAxLTEuOTYtMy4zLTQuNTF2LS4wOGgwWk0xNy4zLDMzLjA2bDIuODQtMi43MSw1LjM0LDEuNzVjMi44LjkyLDMuNzYsMi4xMywzLjQ2LDUuMThsLTExLjY1LTQuMjJoMFpNMTMuNzEsMjAuOTVjMC0uNzkuNDItMS41NCwxLjEzLTIuMTcuNzUsMS4wOSwyLjA1LDIuMDUsNC4wOSwyLjcxbDQuNDIsMS40Ni0yLjQ2LDIuMzgtNC4zNC0xLjQyYy0yLS42Ny0yLjg0LTEuNjctMi44NC0yLjk2TTI2LjgyLDQyLjg3YzkuMTgtNi4wOSwxNC4xMS0xMC4yMywxNC4xMS0xNS4zMiwwLTMuMzgtMi01LjI2LTYuNDMtNi43MmwtMy4zNC0xLjEzLDkuMTQtOC43Ny0xLjg0LTEuOTYtMi43MSwyLjM4LTEyLjgxLTQuMjJjLTMuOTcsMS4yOS04Ljk3LDUuMDktOC45Nyw4Ljg5LDAsLjQyLjA0LjgzLjE3LDEuMjktMy4zLDEuODgtNC42MywzLjYzLTQuNjMsNS44LDAsMi4wNSwxLjA5LDQuMDksNC41NSw1LjIybDIuNzUuOTItOS41Miw5LjE0LDEuODQsMS45NiwyLjk2LTIuNzEsMTQuNzMsNS4yMmgwWiIvPjwvc3ZnPg==","name":"Solflare","supportedTransactionVersions":{},"url":"https://solflare.com"}
+[00:18:36.497] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:18:36.497] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:18:45.104] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:18:45.104] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:18:46.956] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Solflare"}
+[00:18:46.956] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:18:52.090] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:18:52.090] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:18:52.090] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:18:52.090] Browser LOG     User check response: {"exists":false,"success":true}
+[00:19:27.095] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:19:27.095] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:19:27.095] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:19:27.095] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:19:27.095] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:19:27.095] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:19:27.095] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"696360ef4b7d5e95a20c4cea","createdAt":"2026-01-11T08:35:59.202Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"BALD","hairType":"CURLY","heightFeet":6,"heightInches":8,"idealTemp":38,"idealTimeRange":{"max":600,"min":420},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T08:35:59.202Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":56}}
+[00:19:27.095] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"696360ef4b7d5e95a20c4cea","createdAt":"2026-01-11T08:35:59.202Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"BALD","hairType":"CURLY","heightFeet":6,"heightInches":8,"idealTemp":38,"idealTimeRange":{"max":600,"min":420},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T08:35:59.202Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":56}}
+[00:21:00.232] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:21:00.233] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:21:02.205] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:21:02.205] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:21:02.205] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:21:02.205] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:21:02.205] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:21:02.205] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:21:02.205] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"696360ef4b7d5e95a20c4cea","createdAt":"2026-01-11T08:35:59.202Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"BALD","hairType":"CURLY","heightFeet":6,"heightInches":8,"idealTemp":38,"idealTimeRange":{"max":600,"min":420},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T08:35:59.202Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":56}}
+[00:21:02.205] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"696360ef4b7d5e95a20c4cea","createdAt":"2026-01-11T08:35:59.202Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"BALD","hairType":"CURLY","heightFeet":6,"heightInches":8,"idealTemp":38,"idealTimeRange":{"max":600,"min":420},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T08:35:59.202Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":56}}
+[00:22:04.120] Server  LOG     ✓ Compiled in 82ms
+[00:22:33.488] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:22:33.488] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:25:17.946] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:25:17.953] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:25:17.953] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:25:17.953] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:25:17.953] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:25:17.953] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:25:17.953] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"696360ef4b7d5e95a20c4cea","createdAt":"2026-01-11T08:35:59.202Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"BALD","hairType":"CURLY","heightFeet":6,"heightInches":8,"idealTemp":38,"idealTimeRange":{"max":600,"min":420},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T08:35:59.202Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":56}}
+[00:25:17.953] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"696360ef4b7d5e95a20c4cea","createdAt":"2026-01-11T08:35:59.202Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"BALD","hairType":"CURLY","heightFeet":6,"heightInches":8,"idealTemp":38,"idealTimeRange":{"max":600,"min":420},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T08:35:59.202Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":56}}
+[00:25:58.167] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:58.377] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/profile" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+            <SegmentViewNode type="page" pagePath="/frontend/...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function ProfilePage} serverProvidedParams={{...}}>
+                <ProfilePage params={Promise} searchParams={Promise}>
+                  <main className="min-h-scre...">
+                    <Navbar>
+                    <div className="container ...">
+                      <div className="flex flex-...">
+                        <div className="w-full bg-...">
+                          <div>
+                          <div>
+                          <div className="mt-4 p-3 b...">
+                            <p>
+                            <p>
+                            <p>
+                            <p>
++                             Solflare
+-                             None
+                          ...
+            ...
+          ...
+
+[00:25:58.377] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Solflare"}
+[00:25:58.377] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Solflare"}
+[00:25:58.377] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:26:44.262] Browser ERROR   {"name":"WalletConnectionError"} {"_config":{},"_connecting":true,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"Loadable","_wallet":null,"icon":"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJTIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMjA1MGE7c3Ryb2tlOiNmZmVmNDY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOi41cHg7fS5jbHMtMntmaWxsOiNmZmVmNDY7fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJjbHMtMiIgeD0iMCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiByeD0iMTIiIHJ5PSIxMiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LjIzLDI2LjQybDIuNDYtMi4zOCw0LjU5LDEuNWMzLjAxLDEsNC41MSwyLjg0LDQuNTEsNS40MywwLDEuOTYtLjc1LDMuMjYtMi4yNSw0LjkzbC0uNDYuNS4xNy0xLjE3Yy42Ny00LjI2LS41OC02LjA5LTQuNzItNy40M2wtNC4zLTEuMzhoMFpNMTguMDUsMTEuODVsMTIuNTIsNC4xNy0yLjcxLDIuNTktNi41MS0yLjE3Yy0yLjI1LS43NS0zLjAxLTEuOTYtMy4zLTQuNTF2LS4wOGgwWk0xNy4zLDMzLjA2bDIuODQtMi43MSw1LjM0LDEuNzVjMi44LjkyLDMuNzYsMi4xMywzLjQ2LDUuMThsLTExLjY1LTQuMjJoMFpNMTMuNzEsMjAuOTVjMC0uNzkuNDItMS41NCwxLjEzLTIuMTcuNzUsMS4wOSwyLjA1LDIuMDUsNC4wOSwyLjcxbDQuNDIsMS40Ni0yLjQ2LDIuMzgtNC4zNC0xLjQyYy0yLS42Ny0yLjg0LTEuNjctMi44NC0yLjk2TTI2LjgyLDQyLjg3YzkuMTgtNi4wOSwxNC4xMS0xMC4yMywxNC4xMS0xNS4zMiwwLTMuMzgtMi01LjI2LTYuNDMtNi43MmwtMy4zNC0xLjEzLDkuMTQtOC43Ny0xLjg0LTEuOTYtMi43MSwyLjM4LTEyLjgxLTQuMjJjLTMuOTcsMS4yOS04Ljk3LDUuMDktOC45Nyw4Ljg5LDAsLjQyLjA0LjgzLjE3LDEuMjktMy4zLDEuODgtNC42MywzLjYzLTQuNjMsNS44LDAsMi4wNSwxLjA5LDQuMDksNC41NSw1LjIybDIuNzUuOTItOS41Miw5LjE0LDEuODQsMS45NiwyLjk2LTIuNzEsMTQuNzMsNS4yMmgwWiIvPjwvc3ZnPg==","name":"Solflare","supportedTransactionVersions":{},"url":"https://solflare.com"}
+[00:26:44.263] Browser ERROR   {"name":"WalletConnectionError"} {"_config":{},"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"Loadable","_wallet":null,"icon":"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJTIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMjA1MGE7c3Ryb2tlOiNmZmVmNDY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOi41cHg7fS5jbHMtMntmaWxsOiNmZmVmNDY7fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJjbHMtMiIgeD0iMCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiByeD0iMTIiIHJ5PSIxMiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LjIzLDI2LjQybDIuNDYtMi4zOCw0LjU5LDEuNWMzLjAxLDEsNC41MSwyLjg0LDQuNTEsNS40MywwLDEuOTYtLjc1LDMuMjYtMi4yNSw0LjkzbC0uNDYuNS4xNy0xLjE3Yy42Ny00LjI2LS41OC02LjA5LTQuNzItNy40M2wtNC4zLTEuMzhoMFpNMTguMDUsMTEuODVsMTIuNTIsNC4xNy0yLjcxLDIuNTktNi41MS0yLjE3Yy0yLjI1LS43NS0zLjAxLTEuOTYtMy4zLTQuNTF2LS4wOGgwWk0xNy4zLDMzLjA2bDIuODQtMi43MSw1LjM0LDEuNzVjMi44LjkyLDMuNzYsMi4xMywzLjQ2LDUuMThsLTExLjY1LTQuMjJoMFpNMTMuNzEsMjAuOTVjMC0uNzkuNDItMS41NCwxLjEzLTIuMTcuNzUsMS4wOSwyLjA1LDIuMDUsNC4wOSwyLjcxbDQuNDIsMS40Ni0yLjQ2LDIuMzgtNC4zNC0xLjQyYy0yLS42Ny0yLjg0LTEuNjctMi44NC0yLjk2TTI2LjgyLDQyLjg3YzkuMTgtNi4wOSwxNC4xMS0xMC4yMywxNC4xMS0xNS4zMiwwLTMuMzgtMi01LjI2LTYuNDMtNi43MmwtMy4zNC0xLjEzLDkuMTQtOC43Ny0xLjg0LTEuOTYtMi43MSwyLjM4LTEyLjgxLTQuMjJjLTMuOTcsMS4yOS04Ljk3LDUuMDktOC45Nyw4Ljg5LDAsLjQyLjA0LjgzLjE3LDEuMjktMy4zLDEuODgtNC42MywzLjYzLTQuNjMsNS44LDAsMi4wNSwxLjA5LDQuMDksNC41NSw1LjIybDIuNzUuOTItOS41Miw5LjE0LDEuODQsMS45NiwyLjk2LTIuNzEsMTQuNzMsNS4yMmgwWiIvPjwvc3ZnPg==","name":"Solflare","supportedTransactionVersions":{},"url":"https://solflare.com"}
+[00:26:44.263] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:26:45.943] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:46.107] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:26:47.209] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:26:48.544] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:26:48.545] Browser LOG     Wallet state: {"connected":false,"connecting":false}
+[00:26:50.619] Browser LOG     Wallet state: {"connected":false,"connecting":false,"wallet":"Solflare"}
+[00:26:50.619] Browser LOG     Wallet state: {"connected":false,"connecting":true,"wallet":"Solflare"}
+[00:26:55.960] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:26:55.960] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:26:55.960] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:26:55.960] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"696360ef4b7d5e95a20c4cea","createdAt":"2026-01-11T08:35:59.202Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"BALD","hairType":"CURLY","heightFeet":6,"heightInches":8,"idealTemp":38,"idealTimeRange":{"max":600,"min":420},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T08:35:59.202Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":56}}
+[00:26:59.514] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:26:59.514] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:30:02.024] Server  LOG     ✓ Compiled in 53ms
+[00:30:08.552] Server  LOG     ✓ Compiled in 61ms
+[00:30:27.719] Server  LOG     ✓ Compiled in 72ms
+[00:31:20.333] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:31:20.333] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:31:20.333] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:31:20.333] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:31:20.333] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:31:20.333] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:31:20.501] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"696360ef4b7d5e95a20c4cea","createdAt":"2026-01-11T08:35:59.202Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"BALD","hairType":"CURLY","heightFeet":6,"heightInches":8,"idealTemp":38,"idealTimeRange":{"max":600,"min":420},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T08:35:59.202Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":56}}
+[00:31:20.501] Browser ERROR   Error fetching weekly graph: {}
+[00:31:20.501] Browser ERROR   Error fetching weekly graph: {}
+[00:31:20.501] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"696360ef4b7d5e95a20c4cea","createdAt":"2026-01-11T08:35:59.202Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"BALD","hairType":"CURLY","heightFeet":6,"heightInches":8,"idealTemp":38,"idealTimeRange":{"max":600,"min":420},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T08:35:59.202Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":56}}
+[00:31:48.861] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:31:48.861] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:34:11.500] Server  LOG     ✓ Compiled in 36ms
+[00:34:13.829] Server  LOG     ✓ Compiled in 17ms
+[00:34:33.586] Server  LOG     ✓ Compiled in 69ms
+[00:34:51.277] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:56.906] Browser LOG     Wallet connected! Public Key: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:35:17.302] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:35:17.302] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:35:17.302] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:35:17.302] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:35:17.302] Browser LOG     Wallet state: {"connected":true,"connecting":false,"publicKey":"4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6","wallet":"Solflare"}
+[00:35:17.302] Browser LOG     Wallet connected, checking user: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:35:17.302] Browser LOG     Checking user exists: 4nKeeH8qgexsu2woLH1SguckkbPgD5XV5BuQXs1NfBZ6
+[00:35:17.302] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"696360ef4b7d5e95a20c4cea","createdAt":"2026-01-11T08:35:59.202Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"BALD","hairType":"CURLY","heightFeet":6,"heightInches":8,"idealTemp":38,"idealTimeRange":{"max":600,"min":420},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T08:35:59.202Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":56}}
+[00:35:17.302] Browser ERROR   Error fetching weekly graph: {}
+[00:35:17.302] Browser ERROR   Error fetching weekly graph: {}
+[00:35:17.302] Browser LOG     User check response: {"exists":true,"success":true,"user":{"__v":0,"_id":"696360ef4b7d5e95a20c4cea","createdAt":"2026-01-11T08:35:59.202Z","dailyScores":[],"displayName":"Ryan Chang","hairLength":"BALD","hairType":"CURLY","heightFeet":6,"heightInches":8,"idealTemp":38,"idealTimeRange":{"max":600,"min":420},"totalCleanEnvCoins":0,"totalPoints":0,"totalShowers":0,"totalSoapTokenCoins":0,"updatedAt":"2026-01-11T08:35:59.202Z","walletAddress":"4nkeeh8qgexsu2wolh1sguckkbpgd5xv5buqxs1nfbz6","weightLbs":56}}

@@ -1,15 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useWallet } from "@solana/wallet-adapter-react";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 import Navbar from "@/components/Navbar";
-import Questionnaire from "@/components/Questionnaire";
 import ProfileDashboard from "@/components/ProfileDashboard";
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001") + "/api/profile";
 
-type ViewType = "LOGIN" | "QUESTIONNAIRE" | "DASHBOARD";
+type ViewType = "LOGIN" | "DASHBOARD";
 
 interface UserData {
   walletAddress: string;
@@ -30,16 +30,24 @@ interface UserData {
 }
 
 export default function ProfilePage() {
-  const { connected, publicKey, disconnect } = useWallet();
+  const router = useRouter();
+  const { connected, publicKey, disconnect, connecting, select, wallet } = useWallet();
+  const { setVisible } = useWalletModal();
   const [currentView, setCurrentView] = useState<ViewType>("LOGIN");
   const [userData, setUserData] = useState<UserData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Debug: Log wallet state changes
+  useEffect(() => {
+    console.log("Wallet state:", { connected, publicKey: publicKey?.toString(), connecting, wallet: wallet?.adapter.name });
+  }, [connected, publicKey, connecting, wallet]);
+
   // Check if user exists when wallet connects
   useEffect(() => {
     if (connected && publicKey) {
       const walletAddress = publicKey.toString();
+      console.log("Wallet connected, checking user:", walletAddress);
       checkUserExists(walletAddress);
     } else {
       // Reset state when wallet disconnects
@@ -49,12 +57,12 @@ export default function ProfilePage() {
     }
   }, [connected, publicKey]);
 
-
   // Check if user exists in database
   const checkUserExists = async (walletAddress: string) => {
     try {
       setLoading(true);
       setError(null);
+      console.log("Checking user exists:", walletAddress);
       const response = await fetch(`${API_BASE_URL}/${walletAddress}`);
 
       if (!response.ok) {
@@ -62,82 +70,25 @@ export default function ProfilePage() {
       }
 
       const data = await response.json();
+      console.log("User check response:", data);
 
       if (data.success && data.exists) {
         setUserData(data.user);
         setCurrentView("DASHBOARD");
       } else {
-        // User doesn't exist, show questionnaire on this page
-        setCurrentView("QUESTIONNAIRE");
+        // User doesn't exist, redirect to calibration page
+        router.push("/calibration");
       }
     } catch (err) {
       console.error("Error checking user:", err);
       setError("Failed to check user status");
-      // On error, show questionnaire to allow registration
-      setCurrentView("QUESTIONNAIRE");
+      // On error, redirect to calibration to allow registration
+      router.push("/calibration");
     } finally {
       setLoading(false);
     }
   };
 
-
-  // Handle Questionnaire Complete
-  const handleQuestionnaireComplete = async (formData: any) => {
-    if (!publicKey) {
-      setError("Wallet not connected");
-      return;
-    }
-
-    const walletAddress = publicKey.toString();
-    setLoading(true);
-    setError(null);
-
-    try {
-      // Save profile to MongoDB using POST /api/profile/setup
-      const response = await fetch(`${API_BASE_URL}/setup`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          walletAddress,
-          displayName: formData.displayName,
-          heightFeet: formData.heightFeet,
-          heightInches: formData.heightInches,
-          weightLbs: formData.weightLbs,
-          hairLength: formData.hairLength,
-          hairType: formData.hairType,
-        }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to save profile");
-      }
-
-      const data = await response.json();
-
-      if (data.success && data.user) {
-        // Success! Show dashboard
-        setUserData(data.user);
-        setCurrentView("DASHBOARD");
-      } else {
-        throw new Error("Failed to save profile");
-      }
-    } catch (err: any) {
-      setError(err.message || "Failed to save profile. Please try again.");
-      console.error("Save error:", err);
-      throw err; // Re-throw so Questionnaire can handle it
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Handle Cancel Questionnaire
-  const handleCancelQuestionnaire = () => {
-    setCurrentView("LOGIN");
-    setError(null);
-  };
 
   // Handle Disconnect
   const handleDisconnect = async () => {
@@ -149,6 +100,11 @@ export default function ProfilePage() {
     } catch (err) {
       console.error("Error disconnecting:", err);
     }
+  };
+
+  // Handle Wallet Connect Button Click
+  const handleConnectClick = () => {
+    setVisible(true);
   };
 
   return (
@@ -183,23 +139,33 @@ export default function ProfilePage() {
               </div>
 
               <div className="space-y-4">
-                {/* Wallet Connect Button */}
+                {/* Custom Wallet Connect Button - Opens Modal Instead of Redirecting */}
                 <div className="flex justify-center">
-                  <WalletMultiButton className="!bg-primary hover:!bg-primary/90 !rounded-lg !font-semibold !transition-colors" />
+                  <button
+                    onClick={handleConnectClick}
+                    disabled={connecting}
+                    className="px-8 py-3 bg-primary hover:bg-primary/90 disabled:bg-primary/50 disabled:cursor-not-allowed text-primary-foreground font-semibold rounded-lg transition-colors"
+                  >
+                    {connecting ? "Connecting..." : connected ? "Connected" : "Select Wallet"}
+                  </button>
                 </div>
               </div>
 
+              {/* Debug Info */}
+              {process.env.NODE_ENV === "development" && (
+                <div className="mt-4 p-3 bg-muted/50 rounded text-xs text-muted-foreground">
+                  <p>Connected: {connected ? "Yes" : "No"}</p>
+                  <p>Connecting: {connecting ? "Yes" : "No"}</p>
+                  <p>PublicKey: {publicKey ? publicKey.toString().slice(0, 8) + "..." : "None"}</p>
+                  <p>Wallet: {wallet?.adapter.name || "None"}</p>
+                </div>
+              )}
+
               <p className="mt-6 text-center text-xs text-muted-foreground">
-                We support Phantom, Solflare, and other Solana wallets
+                Connect your Solana wallet extension
               </p>
             </div>
           </div>
-        ) : currentView === "QUESTIONNAIRE" && publicKey ? (
-          <Questionnaire
-            walletAddress={publicKey.toString()}
-            onComplete={handleQuestionnaireComplete}
-            onCancel={handleCancelQuestionnaire}
-          />
         ) : currentView === "DASHBOARD" && userData ? (
           <div className="space-y-6">
             {/* Disconnect Button */}
