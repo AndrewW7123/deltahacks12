@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 import { useWallet } from "@solana/wallet-adapter-react";
 import {
   User,
-  Scissors,
-  UserCheck,
-  MoveDown,
+  Minus,
+  Equal,
+  ChevronsDown,
   AlignJustify,
   Waves,
   ArrowRight,
@@ -138,9 +138,9 @@ export default function CalibrationPage() {
     icon: LucideIcon;
   }> = [
     { value: "BALD", label: "Bald / Very Short", icon: User },
-    { value: "SHORT", label: "Short (Ear)", icon: Scissors },
-    { value: "MEDIUM", label: "Medium (Shoulder)", icon: UserCheck },
-    { value: "LONG", label: "Long (Back)", icon: MoveDown },
+    { value: "SHORT", label: "Short (Ear)", icon: Minus },
+    { value: "MEDIUM", label: "Medium (Shoulder)", icon: Equal },
+    { value: "LONG", label: "Long (Back)", icon: ChevronsDown },
   ];
 
   // Hair Type Options

@@ -151,16 +151,6 @@ export default function ProfilePage() {
                 </div>
               </div>
 
-              {/* Debug Info */}
-              {process.env.NODE_ENV === "development" && (
-                <div className="mt-4 p-3 bg-muted/50 rounded text-xs text-muted-foreground">
-                  <p>Connected: {connected ? "Yes" : "No"}</p>
-                  <p>Connecting: {connecting ? "Yes" : "No"}</p>
-                  <p>PublicKey: {publicKey ? publicKey.toString().slice(0, 8) + "..." : "None"}</p>
-                  <p>Wallet: {wallet?.adapter.name || "None"}</p>
-                </div>
-              )}
-
               <p className="mt-6 text-center text-xs text-muted-foreground">
                 Connect your Solana wallet extension
               </p>
@@ -177,7 +167,13 @@ export default function ProfilePage() {
                 Disconnect Wallet
               </button>
             </div>
-            <ProfileDashboard user={userData} />
+                    <ProfileDashboard 
+                      user={userData} 
+                      onUpdate={(updatedUser) => {
+                        // Update local state with the updated user data
+                        setUserData(updatedUser);
+                      }}
+                    />
           </div>
         ) : null}
       </div>

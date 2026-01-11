@@ -1,5 +1,4 @@
 {
-  "/calibration/page": "app/calibration/page.js",
   "/page": "app/page.js",
   "/profile/page": "app/profile/page.js"
 }

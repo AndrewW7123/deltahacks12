@@ -1,8 +1,18 @@
 import express from "express";
+import multer from "multer";
 import User from "../models/User.js";
 import { calculateShowerGoals } from "../utils/showerAlgorithm.js";
+import { bufferToBase64, validateImageFile } from "../utils/imageUpload.js";
 
 const router = express.Router();
+
+// Configure multer for in-memory storage (we'll convert to base64)
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 5 * 1024 * 1024, // 5MB limit
+  },
+});
 
 /**
  * POST /calculate
@@ -196,42 +206,150 @@ router.post("/setup", async (req, res) => {
 });
 
 /**
- * GET /:walletAddress
- * Retrieves a user profile by wallet address
- * Returns { success: true, exists: true/false, user?: {...} }
+ * POST /upload-photo/:walletAddress
+ * Handles image file upload and stores as base64 in MongoDB
+ * Accepts multipart/form-data with 'photo' field
  */
-router.get("/:walletAddress", async (req, res) => {
+router.post("/upload-photo/:walletAddress", upload.single("photo"), async (req, res) => {
   try {
     const { walletAddress } = req.params;
+    const file = req.file;
 
-    if (!walletAddress) {
+    // Validate file
+    const validation = validateImageFile(file);
+    if (!validation.valid) {
       return res.status(400).json({
         success: false,
-        error: "walletAddress is required",
+        error: validation.error,
       });
     }
 
-    // Normalize wallet address (lowercase for consistency)
+    // Normalize wallet address
     const normalizedWalletAddress = walletAddress.toLowerCase().trim();
 
-    // Find user by wallet address
-    const user = await User.findOne({ walletAddress: normalizedWalletAddress });
+    // Find user first to ensure they exist
+    const existingUser = await User.findOne({ walletAddress: normalizedWalletAddress });
 
-    if (user) {
-      return res.status(200).json({
-        success: true,
-        exists: true,
-        user: user,
-      });
-    } else {
-      // User not found - return exists: false (not an error)
-      return res.status(200).json({
-        success: true,
-        exists: false,
+    if (!existingUser) {
+      return res.status(404).json({
+        success: false,
+        error: "User not found",
       });
     }
+
+    // Convert file buffer to base64 data URL
+    const base64Image = bufferToBase64(file.buffer, file.mimetype);
+
+    // Update user's profile photo
+    const user = await User.findOneAndUpdate(
+      { walletAddress: normalizedWalletAddress },
+      { profilePhoto: base64Image },
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+
+    console.log("✅ Profile photo uploaded:", {
+      walletAddress: user.walletAddress,
+      imageSize: file.size,
+      mimeType: file.mimetype,
+    });
+
+    res.status(200).json({
+      success: true,
+      user: user,
+      message: "Profile photo uploaded successfully",
+    });
   } catch (error) {
-    console.error("Error in GET /:walletAddress:", error);
+    console.error("Error in POST /upload-photo:", error);
+
+    res.status(500).json({
+      success: false,
+      error: "Internal server error",
+      message: error.message,
+    });
+  }
+});
+
+/**
+ * PUT /update/:walletAddress
+ * Updates user profile data (displayName, heightFeet, heightInches, weightLbs, hairLength, hairType)
+ * Does NOT recalculate idealTimeRange/idealTemp - use /setup for that
+ * NOTE: profilePhoto should be updated via POST /upload-photo endpoint
+ * 
+ * Accepts JSON body with any of the following fields:
+ * - displayName (profile fields)
+ * - heightFeet, heightInches, weightLbs, hairLength, hairType (questionnaire fields)
+ * 
+ * Returns the updated user object
+ */
+router.put("/update/:walletAddress", async (req, res) => {
+  try {
+    const { walletAddress } = req.params;
+    const {
+      displayName,
+      heightFeet,
+      heightInches,
+      weightLbs,
+      hairLength,
+      hairType,
+    } = req.body;
+
+    // Normalize wallet address
+    const normalizedWalletAddress = walletAddress.toLowerCase().trim();
+
+    // Find user first to ensure they exist
+    const existingUser = await User.findOne({ walletAddress: normalizedWalletAddress });
+
+    if (!existingUser) {
+      return res.status(404).json({
+        success: false,
+        error: "User not found",
+      });
+    }
+
+    // Prepare update data (only include fields that are provided)
+    const updateData = {};
+
+    if (displayName !== undefined) updateData.displayName = displayName;
+    if (heightFeet !== undefined) updateData.heightFeet = Number(heightFeet);
+    if (heightInches !== undefined) updateData.heightInches = Number(heightInches);
+    if (weightLbs !== undefined) updateData.weightLbs = Number(weightLbs);
+    if (hairLength !== undefined) updateData.hairLength = hairLength;
+    if (hairType !== undefined) updateData.hairType = hairType;
+
+    // Update user
+    const user = await User.findOneAndUpdate(
+      { walletAddress: normalizedWalletAddress },
+      updateData,
+      {
+        new: true, // Return the updated document
+        runValidators: true, // Run schema validators
+      }
+    );
+
+    console.log("✅ User profile updated:", {
+      walletAddress: user.walletAddress,
+      displayName: user.displayName,
+    });
+
+    res.status(200).json({
+      success: true,
+      user: user,
+    });
+  } catch (error) {
+    console.error("Error in PUT /update:", error);
+
+    // Handle validation errors
+    if (error.name === "ValidationError") {
+      return res.status(400).json({
+        success: false,
+        error: "Validation error",
+        details: Object.values(error.errors).map((e) => e.message),
+      });
+    }
+
     res.status(500).json({
       success: false,
       error: "Internal server error",
@@ -303,6 +421,52 @@ router.get("/weekly-schedule/:walletAddress", async (req, res) => {
     });
   } catch (error) {
     console.error("Error in GET /weekly-schedule:", error);
+    res.status(500).json({
+      success: false,
+      error: "Internal server error",
+      message: error.message,
+    });
+  }
+});
+
+/**
+ * GET /:walletAddress
+ * Retrieves a user profile by wallet address
+ * Returns { success: true, exists: true/false, user?: {...} }
+ * NOTE: This catch-all route must come AFTER all specific routes
+ */
+router.get("/:walletAddress", async (req, res) => {
+  try {
+    const { walletAddress } = req.params;
+
+    if (!walletAddress) {
+      return res.status(400).json({
+        success: false,
+        error: "walletAddress is required",
+      });
+    }
+
+    // Normalize wallet address (lowercase for consistency)
+    const normalizedWalletAddress = walletAddress.toLowerCase().trim();
+
+    // Find user by wallet address
+    const user = await User.findOne({ walletAddress: normalizedWalletAddress });
+
+    if (user) {
+      return res.status(200).json({
+        success: true,
+        exists: true,
+        user: user,
+      });
+    } else {
+      // User not found - return exists: false (not an error)
+      return res.status(200).json({
+        success: true,
+        exists: false,
+      });
+    }
+  } catch (error) {
+    console.error("Error in GET /:walletAddress:", error);
     res.status(500).json({
       success: false,
       error: "Internal server error",
