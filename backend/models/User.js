@@ -132,6 +132,22 @@ const userSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+
+    // Blockchain Registration Tracking
+    blockchainRegistration: {
+      synced: {
+        type: Boolean,
+        default: false,
+      },
+      txSignature: {
+        type: String,
+        default: null,
+      },
+      syncedAt: {
+        type: Date,
+        default: null,
+      },
+    },
   },
   {
     timestamps: true, // Automatically adds createdAt and updatedAt fields

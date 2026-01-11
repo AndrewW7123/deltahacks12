@@ -3,6 +3,7 @@ import multer from "multer";
 import User from "../models/User.js";
 import { calculateShowerGoals } from "../utils/showerAlgorithm.js";
 import { bufferToBase64, validateImageFile } from "../utils/imageUpload.js";
+import { recordRegistrationOnBlockchain } from "../utils/blockchainRegistration.js";
 
 const router = express.Router();
 
@@ -156,6 +157,10 @@ router.post("/setup", async (req, res) => {
       hasIdealTemp: !!updateData.idealTemp,
     });
 
+    // Check if user already exists
+    const existingUser = await User.findOne({ walletAddress: normalizedWalletAddress });
+    const isNewUser = !existingUser;
+
     const user = await User.findOneAndUpdate(
       { walletAddress: normalizedWalletAddress },
       updateData,
@@ -171,11 +176,52 @@ router.post("/setup", async (req, res) => {
       walletAddress: user.walletAddress,
       displayName: user.displayName,
       _id: user._id,
+      isNewUser: isNewUser,
     });
+
+    // Record registration on blockchain for new users or if not yet synced
+    if (isNewUser || !user.blockchainRegistration?.synced) {
+      try {
+        console.log("📝 Recording user registration on blockchain...");
+        const blockchainResult = await recordRegistrationOnBlockchain({
+          walletAddress: user.walletAddress,
+          displayName: user.displayName,
+          registeredAt: user.createdAt || new Date(),
+          profileData: {
+            heightFeet: user.heightFeet,
+            heightInches: user.heightInches,
+            weightLbs: user.weightLbs,
+            hairLength: user.hairLength,
+            hairType: user.hairType,
+          },
+        });
+
+        if (blockchainResult.success) {
+          // Update user with blockchain registration info
+          await User.findOneAndUpdate(
+            { walletAddress: normalizedWalletAddress },
+            {
+              "blockchainRegistration.synced": true,
+              "blockchainRegistration.txSignature": blockchainResult.txSignature,
+              "blockchainRegistration.syncedAt": new Date(),
+            }
+          );
+          console.log("✅ User registration recorded on blockchain:", blockchainResult.txSignature);
+        } else {
+          console.warn("⚠️  Failed to record registration on blockchain:", blockchainResult.error);
+        }
+      } catch (error) {
+        console.error("Error recording registration on blockchain:", error);
+        // Don't fail the request if blockchain recording fails
+      }
+    }
+
+    // Fetch updated user with blockchain registration info
+    const updatedUser = await User.findOne({ walletAddress: normalizedWalletAddress });
 
     res.status(200).json({
       success: true,
-      user: user,
+      user: updatedUser,
     });
   } catch (error) {
     console.error("Error in POST /setup:", error);
