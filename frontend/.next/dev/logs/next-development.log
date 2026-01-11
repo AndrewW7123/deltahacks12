@@ -1,1 +1,311 @@
-[00:00:01.097] Server  LOG     ✓ Ready in 818ms
+[00:00:01.230] Server  LOG     ✓ Ready in 919ms
+[00:00:04.503] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.011] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="/frontend/...">
+      <SegmentTrieNode>
+      <ClientPageRoot Component={function ProfilePage} serverProvidedParams={{...}}>
+        <ProfilePage params={Promise} searchParams={Promise}>
+          <main className="min-h-scre...">
+            <Navbar>
+              <nav className="flex items...">
+                <LinkComponent>
+                <div className="flex items...">
+                  <LinkComponent>
+                  <div className="hover:scal...">
+                    <WalletMultiButton style={{...}}>
+                      <BaseWalletMultiButton style={{...}} labels={{...}}>
+                        <div className="wallet-ada...">
+                          <BaseWalletConnectionButton style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                            <Button style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                              <button className="wallet-ada..." disabled={undefined} style={{...}} ...>
++                               <i className="wallet-adapter-button-start-icon">
+-                               Select Wallet
+                                ...
+                          ...
+            ...
+    ...
+
+[00:00:05.011] Browser ERROR   Error checking user: {}
+[00:00:05.011] Browser ERROR   Error checking user: {}
+[00:00:51.486] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:51.899] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="/frontend/...">
+      <SegmentTrieNode>
+      <ClientPageRoot Component={function Home} serverProvidedParams={{...}}>
+        <Home params={Promise} searchParams={Promise}>
+          <main className="min-h-scre...">
+            <Navbar>
+              <nav className="flex items...">
+                <LinkComponent>
+                <div className="flex items...">
+                  <LinkComponent>
+                  <div className="hover:scal...">
+                    <WalletMultiButton style={{...}}>
+                      <BaseWalletMultiButton style={{...}} labels={{...}}>
+                        <div className="wallet-ada...">
+                          <BaseWalletConnectionButton style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                            <Button style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                              <button className="wallet-ada..." disabled={undefined} style={{...}} ...>
++                               <i className="wallet-adapter-button-start-icon">
+-                               Select Wallet
+                                ...
+                          ...
+            ...
+    ...
+
+[00:00:53.742] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:54.018] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/profile" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/frontend/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="inter_5972bc34-module__OU16Qa__className"
+-                           data-new-gr-c-s-check-loaded="14.1268.0"
+-                           data-gr-ext-installed=""
+                          >
+                            ...
+                              <BaseWalletConnectionButton style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                                <Button style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                                  <button className="wallet-ada..." disabled={undefined} style={{...}} ...>
++                                   <i className="wallet-adapter-button-start-icon">
+-                                   Select Wallet
+                                    ...
+                  ...
+
+[00:00:54.019] Browser ERROR   Error checking user: {}
+[00:00:54.019] Browser ERROR   Error checking user: {}
+[00:00:55.912] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:56.205] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="/frontend/...">
+      <SegmentTrieNode>
+      <ClientPageRoot Component={function Home} serverProvidedParams={{...}}>
+        <Home params={Promise} searchParams={Promise}>
+          <main className="min-h-scre...">
+            <Navbar>
+              <nav className="flex items...">
+                <LinkComponent>
+                <div className="flex items...">
+                  <LinkComponent>
+                  <div className="hover:scal...">
+                    <WalletMultiButton style={{...}}>
+                      <BaseWalletMultiButton style={{...}} labels={{...}}>
+                        <div className="wallet-ada...">
+                          <BaseWalletConnectionButton style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                            <Button style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                              <button className="wallet-ada..." disabled={undefined} style={{...}} ...>
++                               <i className="wallet-adapter-button-start-icon">
+-                               Select Wallet
+                                ...
+                          ...
+            ...
+    ...
+
+[00:00:58.992] Browser ERROR   {"name":"WalletNotReadyError"} {"_connecting":false,"_events":{"connect":{"context":"[Circular]","once":false},"disconnect":[{"context":"[Circular]","once":false},{"context":"[Circular]","once":false}],"error":{"context":"[Circular]","once":false},"readyStateChange":{"context":"[Circular]","once":false}},"_eventsCount":4,"_publicKey":null,"_readyState":"NotDetected","_wallet":null,"icon":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==","name":"Phantom","supportedTransactionVersions":{},"url":"https://phantom.app"}
+[00:01:03.811] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:04.091] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="/frontend/...">
+      <SegmentTrieNode>
+      <ClientPageRoot Component={function Home} serverProvidedParams={{...}}>
+        <Home params={Promise} searchParams={Promise}>
+          <main className="min-h-scre...">
+            <Navbar>
+              <nav className="flex items...">
+                <LinkComponent>
+                <div className="flex items...">
+                  <LinkComponent>
+                  <div className="hover:scal...">
+                    <WalletMultiButton style={{...}}>
+                      <BaseWalletMultiButton style={{...}} labels={{...}}>
+                        <div className="wallet-ada...">
+                          <BaseWalletConnectionButton style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                            <Button style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                              <button className="wallet-ada..." disabled={undefined} style={{...}} ...>
++                               <i className="wallet-adapter-button-start-icon">
+-                               Select Wallet
+                                ...
+                          ...
+            ...
+    ...
+
+[00:01:09.437] Browser ERROR   Error checking user: {}
+[00:01:09.437] Browser ERROR   Error checking user: {}
+[00:02:34.380] Server  LOG     ✓ Compiled in 63ms
+[00:02:51.546] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:51.791] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="/frontend/...">
+      <SegmentTrieNode>
+      <ClientPageRoot Component={function ProfilePage} serverProvidedParams={{...}}>
+        <ProfilePage params={Promise} searchParams={Promise}>
+          <main className="min-h-scre...">
+            <Navbar>
+              <nav className="flex items...">
+                <LinkComponent>
+                <div className="flex items...">
+                  <LinkComponent>
+                  <div className="hover:scal...">
+                    <WalletMultiButton style={{...}}>
+                      <BaseWalletMultiButton style={{...}} labels={{...}}>
+                        <div className="wallet-ada...">
+                          <BaseWalletConnectionButton style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                            <Button style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                              <button className="wallet-ada..." disabled={undefined} style={{...}} ...>
++                               <i className="wallet-adapter-button-start-icon">
+-                               Select Wallet
+                                ...
+                          ...
+            ...
+    ...
+
+[00:02:51.791] Browser ERROR   Error checking user: {}
+[00:02:51.791] Browser ERROR   Error checking user: {}
+[00:03:28.222] Browser ERROR   Save error: {}
+[00:03:28.222] Browser ERROR   Questionnaire error: {}
+[00:04:55.251] Server  LOG     ✓ Compiled in 186ms
+[00:05:03.401] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:03.734] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/profile" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/frontend/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="inter_5972bc34-module__OU16Qa__className"
+-                           data-new-gr-c-s-check-loaded="14.1268.0"
+-                           data-gr-ext-installed=""
+                          >
+                            ...
+                              <BaseWalletConnectionButton style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                                <Button style={{...}} aria-expanded={false} onClick={function onClick} ...>
+                                  <button className="wallet-ada..." disabled={undefined} style={{...}} ...>
++                                   <i className="wallet-adapter-button-start-icon">
+-                                   Select Wallet
+                                    ...
+                  ...
+
+[00:05:03.734] Browser ERROR   Error checking user: {}
+[00:05:03.734] Browser ERROR   Error checking user: {}
+[00:05:12.681] Browser ERROR   Error checking user: {}
+[00:05:12.681] Browser ERROR   Error checking user: {}
+[00:05:15.200] Browser ERROR   Sign in error: {}
