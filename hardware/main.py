@@ -1,68 +1,46 @@
-""""
-Main progrma file for the shower-o-matic (NAME STILL IN PROGRESS)
-
-runs on bootup, where it will start and stop a task to record data
-once the user is done showering it will stop tasks and send data
-"""
-
-from smbus2 import SMBus
-from bme280 import BME280
-import time
-
-from gpiozero import DistanceSensor
 import time
 import os
-from collections import deque
-import statistics
+os.environ['GPIOZERO_PIN_FACTORY'] = 'lgpio'
+
+from gpiozero import DistanceSensor
+from smbus2 import SMBus
+from bme280 import BME280
 import subprocess
+import csv
 
 
+bus = SMBus(1)
+bme280 = BME280(i2c_dev=bus)
+ultrasonic = DistanceSensor(echo=24, trigger=23)
 
 MAC_ADDR = "2C_76_00_CF_F2_1C"
 CARD = f"bluez_card.{MAC_ADDR}"
 
-TEMP_CALIBRATION = 2
-TIME_THRESHOLD = 10# IN SECONDS
-DISTANCE_WINDOW_SIZE = 10 # IN CENTIMETERS TUNE ACCORDINLY
+print("Setting up hardware...")
 
-distance_history = deque(maxlen=DISTANCE_WINDOW_SIZE)
-audio_timer = 0.0
-AUDIO_THRESHOLD = 60
+# 1. Switch AirPods to Headset/Mic mode
+subprocess.run(["pactl", "set-card-profile", CARD, "headset-head-unit"], capture_output=True)
 
-os.environ['GPIOZERO_PIN_FACTORY'] = 'lgpio'
+# 2. Open the Pi 4 Bluetooth hardware gate
+subprocess.run(["sudo", "hcitool", "cmd", "0x3F", "0x01C", "0x01", "0x02", "0x00", "0x01", "0x01"], capture_output=True)
 
-def ended_shower(bme280: BME280, start_time, ultrasonic: DistanceSensor) -> bool:
-    passed_time = time.time() - start_time # current amount of time that has passed
+print("Mic Setup")
+
+
+def record_5_seconds(filename):
+    # 1. Define the folder name
+    folder = "audio"
     
-    dist = ultrasonic.distance * 100 # distance
-    if passed_time >= TIME_THRESHOLD and (check_distance() or check_audio() or check_humidity()): 
-        # check if enough of time has passed and 
-        return True
-    else:
-        return False
+    # 2. Create the folder if it doesn't exist yet
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+        print(f"Created folder: {folder}")
 
-def check_audio() -> bool:
-    current_time = time.time()
-    if current_time - audio_timer >= AUDIO_THRESHOLD:
-        audio_timer = current_time
-        record_5_seconds("audio.wav")
-        # TODO: return what the gemini ouputs
-    else:
-        return False
-
-
-def check_humidity() -> bool:
-    return False
-
-def check_distance() -> bool:
-    return False
-
-
-# --- RECORDING SECTION ---
-def record_5_seconds(output_file):
-    print(f"\nRecording 5 seconds to {output_file}...")
+    # 3. Join the folder and filename (creates "audio/audio.wav")
+    filepath = os.path.join(folder, filename)
     
-    # The command that worked for your AirPods
+    print(f"\nRecording 5 seconds to {filepath}...")
+    
     cmd = [
         "arecord", 
         "-d", "5", 
@@ -70,7 +48,7 @@ def record_5_seconds(output_file):
         "-r", "16000", 
         "-c", "1", 
         "-vv", 
-        output_file
+        filepath  # Use the full path here
     ]
     
     try:
@@ -79,71 +57,75 @@ def record_5_seconds(output_file):
     except Exception as e:
         print(f"Error recording: {e}")
 
-def get_temperature_Humidity(bme280: BME280): 
-    """
-    Gets the temperature and humidity and returns them rounded to 2 decimals
-    """
-    try:
-        temperature = round(bme280.get_temperature() - TEMP_CALIBRATION, 2)
-        humidity = round(bme280.get_humidity(), 2)
-        return temperature, humidity
-    except:
-        return 0, 0
+
+count = 0
+tracker = 0
+distance_storage = []
+stop_counter = 0
+
+start_time = time.time()
+
+import csv
+import os
+
+# --- Before the loop ---
+csv_file = "live_shower_data.csv"
+headers = ["timestamp", "temp", "humidity", "distance", "status"]
+
+# Create the file and write headers if it doesn't exist
+
+if not os.path.exists(csv_file):
+    with open(csv_file, 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(headers)
+
+with open(csv_file, 'w', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(headers)
+
+while True:
+    dist = ultrasonic.distance * 100
+    temperature = bme280.get_temperature() - 2
+    hum = bme280.get_humidity()
     
-def update_distance_history(ultrasonic: DistanceSensor):
-    dist_cm = ultrasonic.distance * 100  # meters → cm
-    distance_history.append(dist_cm)
-
-
-def send_audio():
-    return None
-
-def send_data(d: dict):
-    """
-    Function which data is sent to laptop
-    """
-    return None
-
-
-def main():
-
-    # when started then record data (while you haven't left teh shower)
-    start_time = time.time()
-    ultrasonic = DistanceSensor(echo=24, trigger=23) # sensor
-    d = {} # hashmap
-
-    # 1. Switch AirPods to Headset/Mic mode
-    subprocess.run(["pactl", "set-card-profile", CARD, "headset-head-unit"], capture_output=True)
-
-    # 2. Open the Pi 4 Bluetooth hardware gate
-    subprocess.run(["sudo", "hcitool", "cmd", "0x3F", "0x01C", "0x01", "0x02", "0x00", "0x01", "0x01"], capture_output=True)
-
-
-
-
-    bus = SMBus(1)
-    bme280 = BME280(i2c_dev=bus)
-    while not ended_shower(bme280, start_time, ultrasonic):
-        # TODO: send audio CLIP
-        temp, humid = get_temperature_Humidity(bme280)
-        update_distance_history(ultrasonic)
-        if not d["temp"] and  not d["humid"]:
-            d["temp"] = temp
-            d["humid"] = humid
-        else:
-            if d["temp"] < temp:
-                d["temp"] = temp
-            if d["humid"] < humid:
-                d["humid"] = humid
-        time.sleep(500)
-    end_time = time.time()
-    d["time"] = end_time - start_time
-
-    # data stuff (send it)
-    send_data(d)
+    # status is "active" while in the loop
+    status = "running" 
     
-    # turn off
-    os.system("sudo poweroff") # turns off after everything to save battery
+    # 1. Print to console
+    print(f"Temp: {temperature:0.2f}C | Hum: {hum:0.2f}% | Distance: {dist:0.2f}")
 
-if __name__ == "__main__":
-    main()
+    # 2. Append to CSV immediately
+    with open(csv_file, 'a', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            time.strftime("%Y-%m-%d %H:%M:%S"), 
+            round(temperature, 2), 
+            round(hum, 2), 
+            round(dist, 2), 
+            status
+        ])
+
+    # --- Your existing logic ---
+    count += 1
+    if count == 30:
+        count = 0 # Don't forget to reset count!
+        tracker += 1
+        record_5_seconds(f"audio{tracker}.wav")
+        
+    if round(dist, 2) == 100.00:
+        stop_counter += 1
+    else:
+        stop_counter = 0
+    
+    if stop_counter >= 25:
+        # Update one last time to say it's stopped
+        with open(csv_file, 'a', newline='') as f:
+            csv.writer(f).writerow([time.strftime("%Y-%m-%d %H:%M:%S"), "-", "-", "-", "STOPPED"])
+        
+        print("No Human detected. Stopping...")
+        break
+        
+    time.sleep(1.0)
+    
+        
+        
