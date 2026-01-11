@@ -8,9 +8,18 @@ from bme280 import BME280
 import subprocess
 import requests
 
-bus = SMBus(1)
-bme280 = BME280(i2c_dev=bus)
-ultrasonic = DistanceSensor(echo=24, trigger=23)
+# Initialize hardware sensors with error handling
+try:
+    bus = SMBus(1)
+    bme280 = BME280(i2c_dev=bus)
+    ultrasonic = DistanceSensor(echo=24, trigger=23)
+    print("✅ Hardware sensors initialized")
+except Exception as e:
+    print(f"⚠️  Warning: Could not initialize hardware sensors: {e}")
+    print("   Running in test mode - sensors will use dummy data")
+    bus = None
+    bme280 = None
+    ultrasonic = None
 
 MAC_ADDR = "2C_76_00_CF_F2_1C"
 CARD = f"bluez_card.{MAC_ADDR}"
@@ -105,12 +114,16 @@ def send_sensor_data(hum, temp, time_count, status, audio_path=None):
                 else:
                     print(f"\n❌ Backend returned error: {data.get('error', 'Unknown error')}")
             else:
-                print(f"\n❌ Backend request failed: {response.status_code}")
+                print(f"\n❌ Backend request failed with status {response.status_code}")
                 try:
                     error_data = response.json()
-                    print(f"   Error: {error_data.get('error', response.text)}")
-                except:
-                    print(f"   Response: {response.text[:200]}")
+                    print(f"   Error Type: {error_data.get('error', 'Unknown error')}")
+                    print(f"   Error Message: {error_data.get('message', 'No message')}")
+                    if error_data.get('stack'):
+                        print(f"   Stack Trace: {error_data.get('stack')[:500]}")
+                except Exception as parse_error:
+                    print(f"   Could not parse error response: {parse_error}")
+                    print(f"   Raw response: {response.text[:500]}")
         except requests.exceptions.Timeout:
             print(f"\n❌ Request timeout - backend may be slow or unreachable")
             print(f"   Check if backend is running at {API_URL}")
@@ -136,9 +149,16 @@ shower_completed = False
 print("🚿 Shower monitoring started. Waiting for user...")
 
 while not shower_completed:
-    dist = ultrasonic.distance * 100
-    temperature = bme280.get_temperature() - 2
-    hum = bme280.get_humidity()
+    # Handle case where sensors might not be initialized (for testing)
+    if ultrasonic is None or bme280 is None:
+        print("⚠️  Sensors not initialized. Using test data.")
+        dist = 50.0  # Test distance
+        temperature = 38.0  # Test temperature
+        hum = 60.0  # Test humidity
+    else:
+        dist = ultrasonic.distance * 100
+        temperature = bme280.get_temperature() - 2
+        hum = bme280.get_humidity()
     
     if temperature > max_temp:
         max_temp = temperature

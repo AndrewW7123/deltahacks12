@@ -369,11 +369,17 @@ router.post("/hardware-input", async (req, res) => {
         : "Shower recorded. Blockchain sync pending - will retry automatically.",
     });
   } catch (error) {
-    console.error("Error in POST /shower/hardware-input:", error);
+    console.error("❌ Error in POST /shower/hardware-input:", error);
+    console.error("   Stack:", error.stack);
+    console.error("   Request body:", req.body);
+    
+    // Return more detailed error in development
+    const isDevelopment = process.env.NODE_ENV !== "production";
     res.status(500).json({
       success: false,
       error: "Internal server error",
       message: error.message,
+      ...(isDevelopment && { stack: error.stack }),
     });
   }
 });

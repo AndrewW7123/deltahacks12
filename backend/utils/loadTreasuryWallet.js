@@ -19,14 +19,34 @@ const TREASURY_FILE = path.resolve(__dirname, "../treasury.json");
  * @returns {Keypair} The treasury wallet keypair
  * @throws {Error} If neither treasury.json nor SOLANA_PRIVATE_KEY is available
  */
+let cachedWallet = null;
+
 export function loadTreasuryWallet() {
+  // Return cached wallet if already loaded
+  if (cachedWallet) {
+    return cachedWallet;
+  }
+
   // First, try to load from treasury.json (dev wallet)
   if (fs.existsSync(TREASURY_FILE)) {
     try {
       const treasuryData = JSON.parse(fs.readFileSync(TREASURY_FILE, "utf8"));
+      
+      if (!treasuryData.secretKey) {
+        throw new Error("treasury.json missing secretKey field");
+      }
+      
       const secretKey = bs58.decode(treasuryData.secretKey);
       const treasuryWallet = Keypair.fromSecretKey(secretKey);
-      console.log(`✅ Using Treasury Wallet: ${treasuryWallet.publicKey.toString()}`);
+      
+      // Cache the wallet
+      cachedWallet = treasuryWallet;
+      
+      // Only log once on first load
+      if (!process.env.SUPPRESS_TREASURY_LOG) {
+        console.log(`✅ Using Treasury Wallet: ${treasuryWallet.publicKey.toString()}`);
+      }
+      
       return treasuryWallet;
     } catch (error) {
       console.warn(`⚠️  Failed to load treasury.json: ${error.message}`);
@@ -39,7 +59,15 @@ export function loadTreasuryWallet() {
     try {
       const adminSecretKey = bs58.decode(SOLANA_PRIVATE_KEY);
       const adminWallet = Keypair.fromSecretKey(adminSecretKey);
-      console.log(`✅ Using SOLANA_PRIVATE_KEY from .env: ${adminWallet.publicKey.toString()}`);
+      
+      // Cache the wallet
+      cachedWallet = adminWallet;
+      
+      // Only log once on first load
+      if (!process.env.SUPPRESS_TREASURY_LOG) {
+        console.log(`✅ Using SOLANA_PRIVATE_KEY from .env: ${adminWallet.publicKey.toString()}`);
+      }
+      
       return adminWallet;
     } catch (error) {
       throw new Error(`Failed to decode SOLANA_PRIVATE_KEY: ${error.message}`);
