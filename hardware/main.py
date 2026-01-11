@@ -62,6 +62,7 @@ count = 0
 tracker = 0
 distance_storage = []
 stop_counter = 0
+time_total = 1
 
 start_time = time.time()
 
@@ -92,13 +93,14 @@ while True:
     status = "running" 
     
     # 1. Print to console
-    print(f"Temp: {temperature:0.2f}C | Hum: {hum:0.2f}% | Distance: {dist:0.2f}")
+    print(f"Temp: {temperature:0.2f}C | Hum: {hum:0.2f}% | Distance: {dist:0.2f} | Elapsed Time: {time_total}")
 
     # 2. Append to CSV immediately
     with open(csv_file, 'a', newline='') as f:
         writer = csv.writer(f)
         writer.writerow([
-            time.strftime("%Y-%m-%d %H:%M:%S"), 
+            time.strftime("%Y-%m-%d %H:%M:%S"),
+            time_total, 
             round(temperature, 2), 
             round(hum, 2), 
             round(dist, 2), 
@@ -110,6 +112,7 @@ while True:
     if count == 30:
         count = 0 # Don't forget to reset count!
         tracker += 1
+        time_total += 5
         record_5_seconds(f"audio{tracker}.wav")
         
     if round(dist, 2) == 100.00:
@@ -120,12 +123,13 @@ while True:
     if stop_counter >= 25:
         # Update one last time to say it's stopped
         with open(csv_file, 'a', newline='') as f:
-            csv.writer(f).writerow([time.strftime("%Y-%m-%d %H:%M:%S"), "-", "-", "-", "STOPPED"])
+            csv.writer(f).writerow([time.strftime("%Y-%m-%d %H:%M:%S"), time_total, "-", "-", "STOPPED"])
         
         print("No Human detected. Stopping...")
         break
         
     time.sleep(1.0)
+    time_total += 1
     
         
         
